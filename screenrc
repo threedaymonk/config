@@ -1,0 +1,12 @@
+defutf8 on
+startup_message off
+shelltitle "shell"
+bell_msg ""
+
+bindkey -k k5 resize -1
+bindkey -k k6 resize +1
+bindkey -k k7 prev
+bindkey -k k8 next
+caption splitonly "%{.c} %n%f %t"
+hardstatus alwayslastline "%{= r}%H %{g}%c %{-}%{-}%{=r}%?%-Lw%?%{.bW}%n*%f %t%?(%u)%?%{-}%?%+Lw%?%{=}"
+
