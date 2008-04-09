@@ -34,4 +34,3 @@ set noclobber
 set history = 250
 set histfile = "$HOME/.history"
 set savehist = ( 125 merge )
-echo "\033]0;`uname -n`\007"
