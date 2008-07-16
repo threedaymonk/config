@@ -87,3 +87,7 @@ augroup END
 vmap =  :!line-up-equals<CR> 
 vmap ,  :!line-up-commas<CR> 
 vmap \| :!tableify<CR>       
+
+" http://tammersaleh.com/posts/quick-vim-svn-blame-snippet
+vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
