@@ -33,12 +33,12 @@ set background=dark
 runtime! indent.vim
 
 " Use ^J/^K to move between tabs
-:nmap <C-J> :tabprevious<cr>
-:nmap <C-K> :tabnext<cr>
-:map <C-J> :tabprevious<cr>
-:map <C-K> :tabnext<cr>
-:imap <C-J> <ESC>:tabprevious<cr>i
-:imap <C-K> <ESC>:tabnext<cr>i
+:nmap <C-J> :tabprevious<cr>       
+:nmap <C-K> :tabnext<cr>           
+:map  <C-J> :tabprevious<cr>       
+:map  <C-K> :tabnext<cr>           
+:imap <C-J> <ESC>:tabprevious<cr>i 
+:imap <C-K> <ESC>:tabnext<cr>i     
 
 " Remember where the cursor was last time we edited this file, and jump there
 " on opening
@@ -71,3 +71,19 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 let Tlist_Show_One_File = 1
+
+augroup HighlightPeskyTabs
+  au!
+  autocmd BufRead,BufNewFile *
+      \ syn match Tab "\t" |
+      \ if &background == "dark" |
+      \   hi def Tab ctermbg=red guibg=#220000 |
+      \ else |
+      \   hi def Tab ctermbg=red guibg=#ffdddd |
+      \ endif
+augroup END
+
+" Line up stuff in visual mode
+vmap =  :!line-up-equals<CR> 
+vmap ,  :!line-up-commas<CR> 
+vmap \| :!tableify<CR>       
