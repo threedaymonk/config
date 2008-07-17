@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+lines = $stdin.read.split(/\n/).map{ |line|
+  parts = line.rstrip.split(',', -1)
+  parts.empty? ? 
+    parts : 
+    ([parts[0]] + parts[1..-1].map{ |p| p.strip }).zip((0...parts.length).to_a)
+}
+
+widths = lines.inject([]){ |acc, line|
+  line.each do |part, i| 
+    acc[i] = [acc[i] || 0, part.length].max
+  end
+  acc
+}
+
+puts lines.map{ |line|
+  line.map{ |part, i| 
+    extra = line[i+1] ? ',' : ''
+    width = (widths[i] || 0) + extra.length
+    (part + extra).ljust(width)
+  }.join(' ').rstrip
+}.join("\n")
