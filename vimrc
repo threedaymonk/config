@@ -84,9 +84,9 @@ augroup HighlightPeskyTabs
 augroup END
 
 " Line up stuff in visual mode
-vmap =  :!line-up-equals<CR> 
-vmap ,  :!line-up-commas<CR> 
-vmap \| :!tableify<CR>       
+vmap =  :!$HOME/.vim/bin/line-up-equals<CR> 
+vmap ,  :!$HOME/.vim/bin/line-up-commas<CR> 
+vmap \| :!$HOME/.vim/bin/tableify<CR>       
 
 " http://tammersaleh.com/posts/quick-vim-svn-blame-snippet
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
@@ -95,6 +95,6 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 augroup RubyTests
   au!
   autocmd BufRead,BufNewFile *_test.rb,test_*.rb
-    \ :nmap gt V:<C-U>!ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p <CR>|
+    \ :nmap gt V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p <CR>|
     \ :nmap gT :<C-U>!ruby %<CR>
 augroup END
