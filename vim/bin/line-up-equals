@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+lines = $stdin.read.split(/\n/).map{ |line|
+  line.split(/\s*=/, 2)
+}
+
+longest = lines.select{ |line| line.length == 2 }.map{ |line| line[0].length }.max
+
+lines.each do |line|
+  if line.length == 2
+    puts line[0].ljust(longest) + ' =' + line[1]
+  else
+    puts line
+  end
+end
