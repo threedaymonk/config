@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+lines = $stdin.read.split(/\n/).map{ |line|
+  line.strip.split(/\s+/)
+}
+
+columns = lines.map{ |line| line.length }.max
+
+column_widths = (0..columns).map{ |column|
+  lines.map{ |line| line[column] }.compact.map{ |cell| cell.length }.max
+}
+
+lines.each do |line|
+  line.each_with_index do |cell, column|
+    print cell.ljust(column_widths[column] + 1)
+  end
+  puts
+end
