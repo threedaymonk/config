@@ -91,3 +91,10 @@ vmap \| :!tableify<CR>
 " http://tammersaleh.com/posts/quick-vim-svn-blame-snippet
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
+" Run Ruby unit tests with gT (for all) or gt (only test under cursor) in command mode
+augroup RubyTests
+  au!
+  autocmd BufRead,BufNewFile *_test.rb,test_*.rb
+    \ :nmap gt V:<C-U>!ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p <CR>|
+    \ :nmap gT :<C-U>!ruby %<CR>
+augroup END
