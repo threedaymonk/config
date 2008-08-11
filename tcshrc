@@ -23,6 +23,7 @@ set dspmbyte = "utf8"
 source "$HOME/.tcshrc-local"
 
 alias ll 'ls -lah'
+alias vim 'vim -p'
 
 set nobeep
 set fignore=(.o)
