@@ -5,13 +5,13 @@ Xft.hinting:    false
 Xft.hintstyle:  hintnone
 
 URxvt*loginShell:true
-URxvt*transparent:true
+URxvt*transparent:false
 URxvt*shading:40
 URxvt*background:Black
 URxvt*foreground:White
 URxvt*scrollBar:true
 URxvt*scrollBar_right:true
-URxvt*transpscrollbar:true
+URxvt*transpscrollbar:false
 URxvt*saveLines:32767
 URxvt*font:xft:Bitstream Vera Sans Mono:size=10:autohint=false:hinting=false:rgba=rgb:hintstyle=hintnone
 
