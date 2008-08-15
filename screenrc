@@ -2,6 +2,7 @@ defutf8 on
 startup_message off
 shelltitle "shell"
 bell_msg ""
+defscrollback 2000
 
 bindkey -k k5 resize -1
 bindkey -k k6 resize +1
