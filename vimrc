@@ -98,5 +98,3 @@ augroup RubyTests
     \ :nmap gt V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p <CR>|
     \ :nmap gT :<C-U>!ruby %<CR>
 augroup END
-
-fixdel " Mac OS hasn't caught up. Make backspace work.
