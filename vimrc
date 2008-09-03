@@ -19,7 +19,6 @@ autocmd BufRead,BufNewFile ?akefile* set noet " ... except for a Makefile
 autocmd BufRead,BufNewFile *.tsv set noet " ... or a tab-separated-value file
 set ts=2
 set sw=2
-set tw=79 " Wrap text at 79 columns
 set nu " Line numbers on
 set backspace=2 " Fully-functional interactive backspace
 set isk+=_,$,@,%,# " Not word dividers
