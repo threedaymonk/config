@@ -12,6 +12,7 @@ if ($?USER == 0 || $?prompt == 0) exit
 
 setenv EDITOR vim
 setenv PAGER less
+setenv GREP_OPTIONS '--exclude=\*.svn\*'
 set color
 set complete = enhance
 bindkey "	" complete-word-fwd
