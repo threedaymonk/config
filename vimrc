@@ -94,6 +94,6 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 augroup RubyTests
   au!
   autocmd BufRead,BufNewFile *_test.rb,test_*.rb
-    \ :nmap tt V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p <CR>|
-    \ :nmap tT :<C-U>!ruby %<CR>
+    \ :nmap gt V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p <CR>|
+    \ :nmap gT :<C-U>!ruby %<CR>
 augroup END
