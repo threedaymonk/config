@@ -97,3 +97,6 @@ augroup RubyTests
     \ :nmap gt V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p <CR>|
     \ :nmap gT :<C-U>!ruby %<CR>
 augroup END
+
+" No more bell!
+autocmd VimEnter * set vb t_vb=
