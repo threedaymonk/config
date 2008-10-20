@@ -32,12 +32,12 @@ set background=dark
 runtime! indent.vim
 
 " Use ^J/^K to move between tabs
-:nmap <C-J> :tabprevious<cr>       
-:nmap <C-K> :tabnext<cr>           
-:map  <C-J> :tabprevious<cr>       
-:map  <C-K> :tabnext<cr>           
-:imap <C-J> <ESC>:tabprevious<cr>i 
-:imap <C-K> <ESC>:tabnext<cr>i     
+:nmap <C-J> :tabprevious<cr>
+:nmap <C-K> :tabnext<cr>
+:map  <C-J> :tabprevious<cr>
+:map  <C-K> :tabnext<cr>
+:imap <C-J> <ESC>:tabprevious<cr>i
+:imap <C-K> <ESC>:tabnext<cr>i
 
 " Remember where the cursor was last time we edited this file, and jump there
 " on opening
@@ -52,7 +52,7 @@ augroup JumpCursorOnEdit
     \        let JumpCursorJOnEdit_foo = JumpCursorOnEdit_foo - 1 |
     \        let b:doopenfold = 2 |
     \     endif |
-    \     exe JumpCursorOnEdit_foo |        
+    \     exe JumpCursorOnEdit_foo |
     \   endif |
     \ endif
   " Need to postpone using "zv" until after reading the modelines.
@@ -64,7 +64,7 @@ augroup JumpCursorOnEdit
     \   endif |
     \   unlet b:doopenfold |
     \ endif
-augroup END 
+augroup END
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -83,9 +83,9 @@ augroup HighlightPeskyTabs
 augroup END
 
 " Line up stuff in visual mode
-vmap =  :!$HOME/.vim/bin/line-up-equals<CR> 
-vmap ,  :!$HOME/.vim/bin/line-up-commas<CR> 
-vmap \| :!$HOME/.vim/bin/tableify<CR>       
+vmap =  :!$HOME/.vim/bin/line-up-equals<CR>
+vmap ,  :!$HOME/.vim/bin/line-up-commas<CR>
+vmap \| :!$HOME/.vim/bin/tableify<CR>
 
 " http://tammersaleh.com/posts/quick-vim-svn-blame-snippet
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
@@ -97,7 +97,7 @@ augroup Ruby
     \ :nmap \rR V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p <CR>
   autocmd BufRead,BufNewFile *.rb
     \ :nmap \rr :<C-U>!ruby %<CR>|
-    \ :nmap \rc :<C-U>!ruby -c %<CR> 
+    \ :nmap \rc :<C-U>!ruby -c %<CR>
 augroup END
 
 " No more bell!
