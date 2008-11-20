@@ -3,12 +3,12 @@ setenv PLATFORM `uname -s`
 setenv TCSHRCD "${HOME}/.tcshrc.d"
 
 source "${TCSHRCD}/common/base.sh"
-test -r "${TCSHRCD}/${PLATFORM}/base.sh" && source "${TCSHRCD}/${PLATFORM}/base.sh"
+test -r "${TCSHRCD}/platform/${PLATFORM}/base.sh" && source "${TCSHRCD}/platform/${PLATFORM}/base.sh"
 test -r "${TCSHRCD}/local/base.sh" && source "${TCSHRCD}/local/base.sh"
 
 # Skip here onwards if not interactive
 if ($?USER == 0 || $?prompt == 0) exit
 
 source "${TCSHRCD}/common/interactive.sh"
-test -r "${TCSHRCD}/${PLATFORM}/interactive.sh" && source "${TCSHRCD}/${PLATFORM}/interactive.sh"
+test -r "${TCSHRCD}/platform/${PLATFORM}/interactive.sh" && source "${TCSHRCD}/platform/${PLATFORM}/interactive.sh"
 test -r "${TCSHRCD}/local/interactive.sh" && source "${TCSHRCD}/local/interactive.sh"
