@@ -1,38 +1,14 @@
-source "$HOME/.tcshrc-path"
+alias source_if_exists "/bin/test -r $1 && source $1"
+setenv PLATFORM `uname -s`
+setenv TCSHRCD "${HOME}/.tcshrc.d"
 
-setenv RUBYOPT rubygems
-setenv LC_ALL en_GB.UTF-8
-setenv LANG en_GB.UTF-8
-setenv MM_CHARSET UTF-8
-unset autologout
-umask 022
+source "${TCSHRCD}/common/base.sh"
+/bin/test -r "${TCSHRCD}/${PLATFORM}/base.sh" && source "${TCSHRCD}/${PLATFORM}/base.sh"
+/bin/test -r "${TCSHRCD}/local/base.sh" && source "${TCSHRCD}/local/base.sh"
 
 # Skip here onwards if not interactive
 if ($?USER == 0 || $?prompt == 0) exit
 
-setenv EDITOR vim
-setenv PAGER less
-setenv GREP_OPTIONS '--exclude=\*.svn\*'
-set color
-set complete = enhance
-bindkey "	" complete-word-fwd
-bindkey "" complete-word-back
-bindkey -k down history-search-forward
-bindkey -k up history-search-backward
-set dspmbyte = "utf8"
-
-source "$HOME/.tcshrc-local"
-
-alias ll 'ls -lah'
-alias vim 'vim -p'
-
-set nobeep
-set fignore=(.o)
-
-set ignoreeof
-set notify
-set noclobber
-
-set history = 250
-set histfile = "$HOME/.history"
-set savehist = ( 125 merge )
+source "${TCSHRCD}/common/interactive.sh"
+/bin/test -r "${TCSHRCD}/${PLATFORM}/interactive.sh" && source "${TCSHRCD}/${PLATFORM}/interactive.sh"
+/bin/test -r "${TCSHRCD}/local/interactive.sh" && source "${TCSHRCD}/local/interactive.sh"
