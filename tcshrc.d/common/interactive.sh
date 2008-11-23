@@ -5,7 +5,6 @@ setenv GREP_OPTIONS '--exclude=\*.svn\*'
 set color
 set complete = enhance
 bindkey "	" complete-word-fwd
-bindkey "" complete-word-back
 bindkey -k down history-search-forward
 bindkey -k up history-search-backward
 set dspmbyte = "utf8"
