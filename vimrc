@@ -82,6 +82,20 @@ augroup HighlightPeskyTabs
       \ endif
 augroup END
 
+" Run a shell command in a new window
+command! -complete=file -nargs=+ Shell call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline)
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1,a:cmdline)
+  call setline(2,substitute(a:cmdline,'.','=','g'))
+  execute 'silent $read !'.escape(a:cmdline,'%#')
+  setlocal nomodifiable
+  1
+endfunction
+command! -complete=file -nargs=* Git call s:RunShellCommand('git '.<q-args>)
+command! -complete=file -nargs=* Svn call s:RunShellCommand('svn '.<q-args>)
+
 " Line up stuff in visual mode
 vmap =  :!$HOME/.vim/bin/line-up-equals<CR>
 vmap ,  :!$HOME/.vim/bin/line-up-commas<CR>
