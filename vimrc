@@ -94,10 +94,11 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 augroup Ruby
   au!
   autocmd BufRead,BufNewFile *_test.rb,test_*.rb
-    \ :nmap \rR V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p <CR>
+    \ :nmap \rR V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p \| tee /tmp/output.txt<CR>
   autocmd BufRead,BufNewFile *.rb
-    \ :nmap \rr :<C-U>!ruby %<CR>|
-    \ :nmap \rc :<C-U>!ruby -c %<CR>
+    \ :nmap \rr :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
+    \ :nmap \rc :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
+    \ :nmap \rv :cfile /tmp/output.txt<CR>:copen<CR>
 augroup END
 
 " No more bell!
