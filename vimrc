@@ -95,6 +95,14 @@ function! s:RunShellCommand(cmdline)
 endfunction
 command! -complete=file -nargs=* Git call s:RunShellCommand('git '.<q-args>)
 command! -complete=file -nargs=* Svn call s:RunShellCommand('svn '.<q-args>)
+command! -nargs=* RG call s:RunShellCommand('grep -Ir "'.<q-args>.'" app bin config lib test public/javascripts | grep -v \\.svn')
+
+" Run a shell command and put its output in a quickfix buffer
+function! s:RunShellCommandToQuickFix(cmdline)
+  execute '!'.escape(a:cmdline.' | tee /tmp/output.txt','%#')
+  1
+endfunction
+command! -nargs=* Rake call s:RunShellCommandToQuickFix('rake '.<q-args>)
 
 " Line up stuff in visual mode
 vmap =  :!$HOME/.vim/bin/line-up-equals<CR>
