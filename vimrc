@@ -25,11 +25,17 @@ set isk+=_,$,@,%,# " Not word dividers
 set wildmenu " : Auto completion
 set showcmd " show current command in status bar
 set showmatch " show matching parenthesis etc.
+set hidden
+set ignorecase " } make / searches case-sensitive
+set smartcase  " } only with a capital letter
+set ruler
+set scrolloff=3
 
 " For use on a dark terminal
 set background=dark
 
 runtime! indent.vim
+runtime! macros/matchit.vim " Use % to match if/end etc.
 
 " Use ^J/^K to move between tabs
 :nmap <C-J> :tabprevious<cr>
