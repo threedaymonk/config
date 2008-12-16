@@ -37,6 +37,9 @@ set background=dark
 runtime! indent.vim
 runtime! macros/matchit.vim " Use % to match if/end etc.
 
+" User , instead of \ as the user modifier. Easier to reach.
+let mapleader = ","
+
 " Use ^J/^K to move between tabs
 :nmap <C-J> :tabprevious<cr>
 :nmap <C-K> :tabnext<cr>
@@ -122,11 +125,11 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 augroup Ruby
   au!
   autocmd BufRead,BufNewFile *_test.rb,test_*.rb
-    \ :nmap \rR V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p \| tee /tmp/output.txt<CR>
+    \ :nmap <leader>rR V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p \| tee /tmp/output.txt<CR>
   autocmd BufRead,BufNewFile *.rb
-    \ :nmap \rr :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
-    \ :nmap \rc :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
-    \ :nmap \rv :cfile /tmp/output.txt<CR>:copen<CR>
+    \ :nmap <leader>rr :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
+    \ :nmap <leader>rc :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
+    \ :nmap <leader>rv :cfile /tmp/output.txt<CR>:copen<CR>
 augroup END
 
 " No more bell!
