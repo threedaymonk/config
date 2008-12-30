@@ -104,7 +104,7 @@ function! s:RunShellCommand(cmdline)
 endfunction
 command! -complete=file -nargs=* Git call s:RunShellCommand('git '.<q-args>)
 command! -complete=file -nargs=* Svn call s:RunShellCommand('svn '.<q-args>)
-command! -nargs=* RG call s:RunShellCommand('grep -Ir "'.<q-args>.'" app bin config lib test public/stylesheets public/javascripts | grep -v \\.svn')
+command! -nargs=* RG call s:RunShellCommand('grep -Irn "'.<q-args>.'" app bin config lib test public/stylesheets public/javascripts | grep -v \\.svn')
 
 " Run a shell command and put its output in a quickfix buffer
 function! s:RunShellCommandToQuickFix(cmdline)
@@ -125,12 +125,13 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 augroup Ruby
   au!
   autocmd BufRead,BufNewFile *_test.rb,test_*.rb
-    \ :nmap <leader>rR V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p \| tee /tmp/output.txt<CR>
+    \ :nmap <leader>R V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p \| tee /tmp/output.txt<CR>
   autocmd BufRead,BufNewFile *.rb
-    \ :nmap <leader>rr :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
-    \ :nmap <leader>rc :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
-    \ :nmap <leader>rv :cfile /tmp/output.txt<CR>:copen<CR>
+    \ :nmap <leader>r :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
+    \ :nmap <leader>c :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
 augroup END
+
+nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 
 " No more bell!
 autocmd VimEnter * set vb t_vb=
