@@ -48,6 +48,11 @@ let mapleader = ","
 :imap <C-J> <ESC>:tabprevious<cr>i
 :imap <C-K> <ESC>:tabnext<cr>i
 
+" Use ^N for :cnext
+:nmap <C-N> :cnext<CR>
+:map  <C-N> :cnext<CR>
+:imap <C-N> <ESC>:cnext<CR>i
+
 " Remember where the cursor was last time we edited this file, and jump there
 " on opening
 augroup JumpCursorOnEdit
@@ -104,7 +109,16 @@ function! s:RunShellCommand(cmdline)
 endfunction
 command! -complete=file -nargs=* Git call s:RunShellCommand('git '.<q-args>)
 command! -complete=file -nargs=* Svn call s:RunShellCommand('svn '.<q-args>)
-command! -nargs=* RG call s:RunShellCommand('grep -Irn "'.<q-args>.'" app bin config lib test public/stylesheets public/javascripts | grep -v \\.svn')
+
+function! Ack(args)
+  let grepprg_bak=&grepprg
+  set grepprg=ack\ -H\ --nocolor\ --nogroup\ --ignore-dir=coverage\ --ignore-dir=tmp\ --ignore-dir=log
+  execute "silent! grep " . a:args
+  botright copen
+  let &grepprg=grepprg_bak
+endfunction
+
+command! -nargs=* -complete=file Ack call Ack(<q-args>)
 
 " Run a shell command and put its output in a quickfix buffer
 function! s:RunShellCommandToQuickFix(cmdline)
