@@ -51,7 +51,6 @@ let mapleader = ","
 " Use ^N for :cnext
 :nmap <C-N> :cnext<CR>
 :map  <C-N> :cnext<CR>
-:imap <C-N> <ESC>:cnext<CR>i
 
 " Remember where the cursor was last time we edited this file, and jump there
 " on opening
