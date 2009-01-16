@@ -37,7 +37,7 @@ set background=dark
 runtime! indent.vim
 runtime! macros/matchit.vim " Use % to match if/end etc.
 
-" User , instead of \ as the user modifier. Easier to reach.
+" Use , instead of \ as the user modifier. Easier to reach.
 let mapleader = ","
 
 " Use ^J/^K to move between tabs
@@ -124,7 +124,7 @@ function! s:RunShellCommandToQuickFix(cmdline)
   execute '!'.escape(a:cmdline.' | tee /tmp/output.txt','%#')
   1
 endfunction
-command! -nargs=* Rake call s:RunShellCommandToQuickFix('rake '.<q-args>)
+command! -nargs=* Rake call s:RunShellCommandToQuickFix('rake '.<q-args>.' | grep -v vendor/rails/ | grep -v /lib/ruby/')
 
 " Line up stuff in visual mode
 vmap =  :!$HOME/.vim/bin/line-up-equals<CR>
@@ -142,6 +142,13 @@ augroup Ruby
   autocmd BufRead,BufNewFile *.rb
     \ :nmap <leader>r :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
     \ :nmap <leader>c :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
+    \ :vmap b :!beautify-ruby<CR>
+augroup END
+
+augroup RHTML
+  au!
+  autocmd BufRead,BufNewFile *.rhtml,*.html.erb
+    \ :vmap b :!htmlbeautifier<CR>
 augroup END
 
 nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
