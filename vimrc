@@ -124,7 +124,7 @@ function! s:RunShellCommandToQuickFix(cmdline)
   execute '!'.escape(a:cmdline.' | tee /tmp/output.txt','%#')
   1
 endfunction
-command! -nargs=* Rake call s:RunShellCommandToQuickFix('rake '.<q-args>.' | grep -v vendor/rails/ | grep -v /lib/ruby/')
+command! -nargs=* Rake call s:RunShellCommandToQuickFix('rake '.<q-args>)
 
 " Line up stuff in visual mode
 vmap =  :!$HOME/.vim/bin/line-up-equals<CR>
