@@ -88,10 +88,13 @@ augroup HighlightPeskyTabs
   au!
   autocmd BufRead,BufNewFile *
       \ syn match Tab "\t" |
+      \ syn match TrailingWS "\s\+$" |  
       \ if &background == "dark" |
       \   hi def Tab ctermbg=red guibg=#220000 |
+      \   hi def TrailingWS ctermbg=red guibg=#220000 |
       \ else |
       \   hi def Tab ctermbg=red guibg=#ffdddd |
+      \   hi def TrailingWS ctermbg=red guibg=#ffdddd |
       \ endif
 augroup END
 
