@@ -10,13 +10,6 @@ else
   autocmd VimEnter * if getcwd()=="/" | if strlen(@%) | cd %:p:h | else | cd | endif | endif
 endif
 
-set t_Co=256
-colorscheme ir_black
-se cursorline
-hi CursorLine term=none cterm=none ctermbg=234
-autocmd InsertLeave * hi CursorLine term=none cterm=none ctermbg=234
-autocmd InsertEnter * hi CursorLine term=none cterm=none ctermbg=17
-
 set nocompatible
 filetype on
 syntax on " Syntax highlighting
