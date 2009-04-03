@@ -15,8 +15,9 @@ column_widths = (0..max_columns).map{ |column|
 
 rows.each do |row|
   print indentation
+  buffer = ''
   row.each_with_index do |cell, column|
-    print cell.ljust(column_widths[column] + 2)
+    buffer << cell.ljust(column_widths[column] + 2)
   end
-  puts
+  puts buffer.rstrip
 end
