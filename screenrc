@@ -1,7 +1,9 @@
 defutf8 on
+defencoding UTF-8
 startup_message off
 shelltitle "shell"
 bell_msg ""
+vbell off
 defscrollback 2000
 
 bindkey -k k5 resize -1
