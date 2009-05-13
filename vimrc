@@ -154,6 +154,9 @@ augroup RHTML
     \ :vmap b :!htmlbeautifier<CR>
 augroup END
 
+autocmd BufNewFile,BufReadPost *.feature,*.story set filetype=cucumber
+autocmd BufNewFile,BufReadPost *.json set filetype=javascript
+
 nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 
 " No more bell!
