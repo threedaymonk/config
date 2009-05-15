@@ -140,9 +140,9 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 " Various useful Ruby command mode shortcuts
 augroup Ruby
   au!
-  autocmd BufRead,BufNewFile *_test.rb,test_*.rb
+  autocmd BufRead,BufNewFile,BufEnter *_test.rb,test_*.rb
     \ :nmap <leader>R V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p \| tee /tmp/output.txt<CR>
-  autocmd BufRead,BufNewFile *.rb
+  autocmd BufRead,BufNewFile,BufEnter *.rb
     \ :nmap <leader>r :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
     \ :nmap <leader>c :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
     \ :vmap b :!beautify-ruby<CR>
@@ -150,12 +150,18 @@ augroup END
 
 augroup RHTML
   au!
-  autocmd BufRead,BufNewFile *.rhtml,*.html.erb
+  autocmd BufRead,BufNewFile,BufEnter *.rhtml,*.html.erb
     \ :vmap b :!htmlbeautifier<CR>
 augroup END
 
-autocmd BufNewFile,BufReadPost *.feature,*.story set filetype=cucumber
-autocmd BufNewFile,BufReadPost *.json set filetype=javascript
+augroup Cucumber
+  au!
+  autocmd BufNewFile,BufReadPost,BufEnter *.feature,*.story
+    \ set filetype=cucumber|
+    \ :nmap <leader>r :<C-U>!cucumber %<CR>
+augroup END
+
+autocmd BufNewFile,BufReadPost,BufEnter *.json set filetype=javascript
 
 nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 
