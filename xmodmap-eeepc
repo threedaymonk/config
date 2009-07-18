@@ -2,9 +2,9 @@
 remove Lock = Caps_Lock
 add Control = Caps_Lock
 ! menu
-keycode 117 = Multi_key
+keycode 135 = Multi_key
 ! alt gr
-keycode 113 = Mode_switch
+keycode 108 = Mode_switch
 
 ! Accented characters
 keycode 38 = a A aacute Aacute
