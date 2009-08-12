@@ -161,7 +161,7 @@ augroup Cucumber
   autocmd BufNewFile,BufReadPost,BufEnter *.feature,*.story
     \ set filetype=cucumber|
     \ :nmap <leader>r :<C-U>!cucumber-runner %<CR>|
-    \ :nmap <leader>R :<C-U>!cucumber-runner -b %<CR>
+    \ :nmap <leader>R :<C-U>!cucumber-runner -t@wip -b %<CR>
 augroup END
 
 autocmd BufNewFile,BufReadPost,BufEnter *.json set filetype=javascript
