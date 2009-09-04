@@ -109,7 +109,6 @@ function! s:RunShellCommand(cmdline)
   setlocal nomodifiable
   1
 endfunction
-command! -complete=file -nargs=* Git call s:RunShellCommand('git '.<q-args>)
 command! -complete=file -nargs=* Svn call s:RunShellCommand('svn '.<q-args>)
 
 function! Ack(args)
