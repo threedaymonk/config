@@ -137,10 +137,11 @@ vmap \| :!$HOME/.vim/bin/tableify<CR>
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
 " Various useful Ruby command mode shortcuts
+" focused-test can be found at http://github.com/btakita/focused-test
 augroup Ruby
   au!
   autocmd BufRead,BufNewFile,BufEnter *_test.rb,test_*.rb
-    \ :nmap <leader>R V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test % <C-R>=line("'<")<CR>p \| tee /tmp/output.txt<CR>
+    \ :nmap <leader>R V:<C-U>!focused-test -b -f % -l <C-R>=line(".")<CR> \| tee /tmp/output.txt<CR>
   autocmd BufRead,BufNewFile,BufEnter *.rb
     \ :nmap <leader>r :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
     \ :nmap <leader>c :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
