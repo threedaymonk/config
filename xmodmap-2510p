@@ -32,5 +32,11 @@ keycode 10 = 1 exclam exclamdown
 keycode 11 = 2 at
 keycode 12 = 3 numbersign sterling
 keycode 13 = 4 dollar EuroSign cent
+keycode 15 = 6 asciicircum dead_circumflex
 keycode 17 = 8 asterisk degree
 
+! Other dead keys
+keycode 49 = grave asciitilde dead_grave dead_tilde
+keycode 48 = apostrophe quotedbl dead_acute dead_diaeresis
+keycode 59 = comma less dead_cedilla
+keycode 58 = m M dead_macron
