@@ -5,7 +5,7 @@ cpu_avg_samples 2
 default_color white
 default_outline_color white
 default_shade_color white
-default_bar_size 100
+default_bar_size 100 4
 draw_borders no
 draw_graph_borders yes
 draw_outline no
@@ -32,6 +32,7 @@ show_graph_scale no
 show_graph_range no
 double_buffer yes
 short_units yes
+text_buffer_size 2048
 
 TEXT
 $nodename
@@ -42,8 +43,10 @@ System
 ${color grey}Uptime $color$uptime
 ${color grey}Freq.  $color$freq MHz
 ${color grey}Temp.  $color$acpitemp°C
-${color grey}Memory $color${membar 4,100} $memperc%
-${color grey}CPU    $color${cpubar 4,100} $memperc%
+${color grey}Memory $color${membar 4,100}
+${color grey}CPU    $color${cpubar 4,100}
+${color grey}Disk   ${color}R ${diskio_read}
+       W ${diskio_write}
 $hr
 File systems
 ${color grey}/     $color${fs_bar 4,60 /} ${fs_free /} free
@@ -54,5 +57,8 @@ ${color grey}wlan0$color ▲ ${upspeed wlan0}
       ▼ ${downspeed wlan0}
 ${color grey}eth0$color  ▲ ${upspeed eth0}
       ▼ ${downspeed eth0}
-${color grey}ADSL usage $color${execbar cat ~/.newnet-usage}
+${color grey}ADSL usage $color${execbar cat ~/.conky/var/newnet-usage}
+$hr
+London Underground
+${execp cat ~/.conky/var/tube-status}
 $hr
