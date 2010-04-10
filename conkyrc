@@ -28,6 +28,7 @@ uppercase no
 use_spacer none
 show_graph_scale no
 show_graph_range no
+double_buffer yes
 
 TEXT
 ${scroll 16 $nodename - $sysname $kernel on $machine | }
