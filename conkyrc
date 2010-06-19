@@ -13,7 +13,7 @@ draw_shades no
 use_xft yes
 xftfont DejaVu Sans Mono:size=8
 gap_x 5
-gap_y 33
+gap_y 10
 minimum_size 5 5
 net_avg_samples 2
 no_buffers yes
@@ -35,28 +35,29 @@ short_units yes
 text_buffer_size 2048
 
 TEXT
-$nodename
+$nodename ${alignr}${time %H:%M}
 $hr
-${time %A %d %B %Y}
+${time %A}${alignr}${time %d %B %Y}
 $hr
 System
 ${color grey}Uptime $color$uptime
 ${color grey}Freq.  $color$freq MHz
 ${color grey}Temp.  $color$acpitemp°C
-${color grey}Memory $color${membar 4,100}
-${color grey}CPU    $color${cpubar 4,100}
-${color grey}Disk   ${color}R ${diskio_read}
-       W ${diskio_write}
+${color grey}Memory $color${membar}
+${color grey}CPU    $color${cpubar cpu0}
+       ${cpubar cpu1}
+${color grey}Disk   ${color}R ${diskio_read}/s
+       W ${diskio_write}/s
 $hr
 File systems
-${color grey}/     $color${fs_bar 4,60 /} ${fs_free /} free
-${color grey}/home $color${fs_bar 4,60 /home} ${fs_free /home} free
+${color grey}/     $color${fs_bar 4,60 /} ${alignr}${fs_free /} free
+${color grey}/home $color${fs_bar 4,60 /home} ${alignr}${fs_free /home} free
 $hr
 Networking
-${color grey}wlan0$color ▲ ${upspeed wlan0}
-      ▼ ${downspeed wlan0}
-${color grey}eth0$color  ▲ ${upspeed eth0}
-      ▼ ${downspeed eth0}
+${color grey}wlan0$color ▲ ${upspeed wlan0}/s
+      ▼ ${downspeed wlan0}/s
+${color grey}eth0$color  ▲ ${upspeed eth0}/s
+      ▼ ${downspeed eth0}/s
 ${color grey}ADSL usage $color${execbar cat ~/.conky/var/newnet-usage}
 $hr
 London Underground
