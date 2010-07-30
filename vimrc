@@ -33,6 +33,8 @@ set scrolloff=3
 
 " For use on a dark terminal
 set background=dark
+set t_Co=256
+colorscheme ir_black
 
 runtime! indent.vim
 runtime! macros/matchit.vim " Use % to match if/end etc.
@@ -140,12 +142,13 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 " focused-test can be found at http://github.com/btakita/focused-test
 augroup Ruby
   au!
-  autocmd BufRead,BufNewFile,BufEnter *_test.rb,test_*.rb
+  autocmd BufRead,BufNewFile,BufEnter *_test.rb,test_*.rb,*_spec.rb
     \ :nmap <leader>R V:<C-U>!focused-test -b -f % -l <C-R>=line(".")<CR> \| tee /tmp/output.txt<CR>
   autocmd BufRead,BufNewFile,BufEnter *.rb
     \ :nmap <leader>r :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
     \ :nmap <leader>c :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
-    \ :vmap b :!beautify-ruby<CR>
+    \ :vmap b :!beautify-ruby<CR>|
+    \ :imap emd end
   autocmd BufRead,BufNewFile,BufEnter *_spec.rb
     \ :nmap <leader>r :<C-U>!spec % \| tee /tmp/output.txt<CR>
 augroup END
