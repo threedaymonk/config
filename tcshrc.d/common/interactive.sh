@@ -11,6 +11,7 @@ set dspmbyte = "utf8"
 
 alias ll 'ls -lah'
 alias vim 'vim -p'
+alias youtube-dl 'youtube-dl -t'
 
 set nobeep
 set fignore=(.o)
