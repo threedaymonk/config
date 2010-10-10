@@ -1,4 +1,4 @@
-Dir[ENV['HOME']+'/.irb/*'].each do |ext|
+Dir[ENV['HOME']+'/.irb/*.rb'].each do |ext|
   begin
     require ext
   rescue Exception => ex
