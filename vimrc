@@ -15,8 +15,8 @@ filetype on
 syntax on " Syntax highlighting
 set ai " Auto-indent
 set et " Expand tabs to spaces
-autocmd BufRead,BufNewFile Makefile* set noet " ... except for a Makefile
-autocmd BufRead,BufNewFile *.tsv set noet " ... or a tab-separated-value file
+autocmd BufRead,BufNewFile,BufEnter Makefile* set noet " ... except for a Makefile
+autocmd BufRead,BufNewFile,BufEnter *.tsv set noet " ... or a tab-separated-value file
 set ts=2
 set sw=2
 set nu " Line numbers on
