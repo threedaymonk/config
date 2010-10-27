@@ -19,6 +19,7 @@ autocmd BufRead,BufNewFile,BufEnter Makefile* set noet " ... except for a Makefi
 autocmd BufRead,BufNewFile,BufEnter *.tsv set noet " ... or a tab-separated-value file
 set ts=2
 set sw=2
+autocmd BufRead,BufNewFile,BufEnter *.py set ts=4 | set sw=4 " Follow PEP 8 for Python source
 set nu " Line numbers on
 set backspace=2 " Fully-functional interactive backspace
 set isk+=_,$,@,%,# " Not word dividers
