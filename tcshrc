@@ -1,13 +1,17 @@
-setenv PLATFORM `uname -s`
-setenv TCSHRCD "${HOME}/.tcshrc.d"
+if ($?SYSTEM_PATH == 0) setenv SYSTEM_PATH $PATH
 
-source "${TCSHRCD}/common/base.sh"
-test -r "${TCSHRCD}/platform/${PLATFORM}/base.sh" && source "${TCSHRCD}/platform/${PLATFORM}/base.sh"
-test -r "${TCSHRCD}/local/base.sh" && source "${TCSHRCD}/local/base.sh"
+cd ${HOME}/.tcshrc.d
+
+source "common/base.sh"
+test -r "platform/${OSTYPE}/base.sh" && source "platform/${OSTYPE}/base.sh"
+test -r "local/${HOST}/base.sh" && source "local/${HOST}/base.sh"
 
 # Skip here onwards if not interactive
-if ($?USER == 0 || $?prompt == 0) exit
+if ($?USER == 0 || $?prompt == 0) goto tidyup
 
-source "${TCSHRCD}/common/interactive.sh"
-test -r "${TCSHRCD}/platform/${PLATFORM}/interactive.sh" && source "${TCSHRCD}/platform/${PLATFORM}/interactive.sh"
-test -r "${TCSHRCD}/local/interactive.sh" && source "${TCSHRCD}/local/interactive.sh"
+source "common/interactive.sh"
+test -r "platform/${OSTYPE}/interactive.sh" && source "platform/${OSTYPE}/interactive.sh"
+test -r "local/${HOST}/interactive.sh" && source "local/${HOST}/interactive.sh"
+
+tidyup:
+cd -
