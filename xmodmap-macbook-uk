@@ -1,10 +1,10 @@
 ! caps
 remove Lock = Caps_Lock
 add Control = Caps_Lock
-! enter (next to right cmd)
-keycode 108 = Multi_key
-! right cmd
-keycode 116 = Mode_switch
+! right cmd = AltGr
+keycode 134 = Mode_switch
+! enter (next to right cmd) = Compose
+keycode 104 = Multi_key
 
 ! left of 1
 keycode 49 = section plusminus
