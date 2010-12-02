@@ -13,5 +13,9 @@ source "common/interactive.sh"
 test -r "platform/${OSTYPE}/interactive.sh" && source "platform/${OSTYPE}/interactive.sh"
 test -r "local/${HOST}/interactive.sh" && source "local/${HOST}/interactive.sh"
 
+set prompt_info = ""
+if ($?VIM) set prompt_info = "[vim] "
+set prompt = "%{\033[${prompt_color}m%}%. ${prompt_info}%#%{\033[0m%} "
+
 tidyup:
 cd -

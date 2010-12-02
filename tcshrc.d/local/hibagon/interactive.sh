@@ -1,1 +1,1 @@
-set prompt = "%{\033[30;42m%}%. %#%{\033[0m%} "
+set prompt_color = "30;42"
