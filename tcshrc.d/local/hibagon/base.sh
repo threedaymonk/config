@@ -1,1 +1,1 @@
-setenv PATH ${PATH}:${HOME}/local/bin:/opt/android-sdk/tools
+setenv PATH ${HOME}/local/bin:/opt/android-sdk/tools:${SYSTEM_PATH}
