@@ -1,1 +1,1 @@
-setenv PATH ${HOME}/local/bin:${SYSTEM_PATH}
+setenv PATH ${HOME}/local/bin:${PATH}

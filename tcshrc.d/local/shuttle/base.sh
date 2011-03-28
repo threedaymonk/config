@@ -1,1 +1,0 @@
-setenv PATH ${SYSTEM_PATH}

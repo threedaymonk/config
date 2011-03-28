@@ -1,7 +1,5 @@
 # vim: syntax=tcsh
 
-if ($?SYSTEM_PATH == 0) setenv SYSTEM_PATH $PATH
-
 cd ${HOME}/.tcshrc.d
 
 source "common/base.sh"
