@@ -1,3 +1,5 @@
+# vim: syntax=tcsh
+
 if ($?SYSTEM_PATH == 0) setenv SYSTEM_PATH $PATH
 
 cd ${HOME}/.tcshrc.d
@@ -14,7 +16,13 @@ test -r "platform/${OSTYPE}/interactive.sh" && source "platform/${OSTYPE}/intera
 test -r "local/${HOST}/interactive.sh" && source "local/${HOST}/interactive.sh"
 
 set prompt_info = ""
-if ($?VIM) set prompt_info = "[vim] "
+if ($?VIM) then
+  set prompt_info = "[vim] $prompt_info"
+endif
+if ($?RUBY_VERSION) then
+  set prompt_info = "[$RUBY_VERSION] $prompt_info"
+endif
+
 set prompt = "%{\033[${prompt_color}m%}%. ${prompt_info}%#%{\033[0m%} "
 
 tidyup:
