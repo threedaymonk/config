@@ -1,1 +1,1 @@
-setenv PATH ${HOME}/local/bin:/opt/android-sdk/tools:${SYSTEM_PATH}
+setenv PATH ${HOME}/local/bin:${HOME}/.cabal/bin:/opt/android-sdk/tools:${SYSTEM_PATH}
