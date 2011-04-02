@@ -143,8 +143,6 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 " focused-test can be found at http://github.com/btakita/focused-test
 augroup Ruby
   au!
-  autocmd BufRead,BufNewFile Capfile,*.ru
-    \ set filetype=ruby
   autocmd BufRead,BufNewFile,BufEnter *_test.rb,test_*.rb,*_spec.rb
     \ :nmap <leader>R V:<C-U>!focused-test -b -f % -l <C-R>=line(".")<CR> \| tee /tmp/output.txt<CR>
   autocmd BufRead,BufNewFile,BufEnter *.rb
