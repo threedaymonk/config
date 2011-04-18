@@ -27,8 +27,6 @@ set wildmenu " : Auto completion
 set showcmd " show current command in status bar
 set showmatch " show matching parenthesis etc.
 set hidden
-set ignorecase " } make / searches case-sensitive
-set smartcase  " } only with a capital letter
 set ruler
 set scrolloff=3
 
