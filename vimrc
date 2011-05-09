@@ -33,7 +33,7 @@ set scrolloff=3
 " For use on a dark terminal
 set background=dark
 set t_Co=256
-colorscheme vividchalk
+colorscheme ir_black
 
 runtime! indent.vim
 runtime! macros/matchit.vim " Use % to match if/end etc.
