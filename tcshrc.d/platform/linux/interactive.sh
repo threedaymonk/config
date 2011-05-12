@@ -7,6 +7,7 @@ alias pbpaste 'xsel -b'
 
 bindkey "[Z" complete-word-back
 
-keychain -q -Q id_dsa
+test -r "${HOME}/.ssh/id_dsa" && keychain -q -Q id_dsa
+test -r "${HOME}/.ssh/id_rsa" && keychain -q -Q id_rsa
 
 echo -n "\033]0;`uname -n`\007"
