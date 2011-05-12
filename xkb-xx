@@ -1,0 +1,34 @@
+// Copy to /usr/share/X11/xkb/symbols/xx
+// Load with setxkbmap xx
+
+partial alphanumeric_keys
+xkb_symbols "basic" {
+  name[Group1]= "USA - International (threedaymonk)";
+
+  include "us(altgr-intl)"
+
+  key <AE01> { [ 1,            exclam,      exclamdown,       onesuperior ] };
+  key <AE02> { [ 2,            at,          dead_doubleacute, twosuperior ] };
+  key <AE03> { [ 3,            numbersign,  sterling,         threesuperior ] };
+  key <AE04> { [ 4,            dollar,      cent,             currency  ] };
+  key <AE06> { [ 6,            asciicircum, dead_circumflex,  onequarter ] };
+  key <AE08> { [ 8,            asterisk,    degree,           threequarters ] };
+  key <AE11> { [ minus,        underscore,  endash,           emdash ] };
+
+  key <AD11> { [ bracketleft,  braceleft,   leftdoublequotemark,              rightdoublequotemark ] };
+  key <AD12> { [ bracketright, braceright,  leftsinglequotemark,   rightsinglequotemark ] };
+
+  key <AC10> { [ semicolon,    colon,       ellipsis ] };
+
+  key <AB03> { [ c,            C,           copyright,        cent ] };
+  key <AB06> { [ n,            N,           ntilde,           Ntilde ] };
+  key <AB07> { [ m,            M,           dead_macron  ] };
+  key <AB08> { [ comma,        less,        dead_cedilla ] };
+
+  include "level3(ralt_switch)"
+
+  key <CAPS> { symbols[Group1]= [ Control_L ] };
+  modifier_map  Control { <CAPS>, <LCTL> };
+
+  key <RCTL> { [  Multi_key ] };
+};
