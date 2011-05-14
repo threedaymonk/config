@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=touchpad-settings
+Comment=Configure touchpad
+Exec=/home/paul/bin/touchpad-settings
+StartupNotify=false
+Terminal=false
+Hidden=false
