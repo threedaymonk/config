@@ -1,1 +1,1 @@
-setenv PATH ${HOME}/local/bin:${PATH}
+set -l path = (${HOME}/local/bin $path)

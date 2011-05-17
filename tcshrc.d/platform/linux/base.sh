@@ -1,1 +1,3 @@
-setenv PATH ${HOME}/bin:${PATH}:/usr/sbin:/sbin
+set -l path = (${HOME}/bin $path)
+set -f path = ($path /usr/sbin)
+set -f path = ($path /sbin)
