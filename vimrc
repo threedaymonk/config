@@ -29,6 +29,8 @@ set showmatch " show matching parenthesis etc.
 set hidden
 set ruler
 set scrolloff=3
+set mouse=a
+set ttymouse=xterm
 
 " For use on a dark terminal
 set background=dark
