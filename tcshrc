@@ -21,7 +21,8 @@ if ($?RUBY_VERSION) then
   set prompt_info = "[$RUBY_VERSION] $prompt_info"
 endif
 
-set prompt = "%{\033[${prompt_color}m%}${prompt_info}%. %#%{\033[0m%} "
+set prompt = "%{\033[${prompt_color}m%}[%?] ${prompt_info}%. %#%{\033[0m%} "
+set noding
 
 tidyup:
 cd -
