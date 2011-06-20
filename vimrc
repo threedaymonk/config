@@ -29,6 +29,8 @@ set showmatch " show matching parenthesis etc.
 set hidden
 set ruler
 set scrolloff=3
+
+" Mouse support under tmux
 set mouse=a
 set ttymouse=xterm
 
