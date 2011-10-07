@@ -24,5 +24,8 @@ endif
 set prompt = "%{\033[${prompt_color}m%}[%?] ${prompt_info}%. %#%{\033[0m%} "
 set noding
 
+# Disable Ctrl-S.
+stty -ixon
+
 tidyup:
 cd -
