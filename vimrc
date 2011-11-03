@@ -29,6 +29,7 @@ set showmatch " show matching parenthesis etc.
 set hidden
 set ruler
 set scrolloff=3
+set colorcolumn=80
 
 " Mouse support under tmux
 set mouse=a
@@ -38,6 +39,7 @@ set ttymouse=xterm
 set background=dark
 set t_Co=256
 colorscheme ir_black
+highlight ColorColumn ctermbg=black
 
 runtime! indent.vim
 runtime! macros/matchit.vim " Use % to match if/end etc.
