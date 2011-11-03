@@ -8,7 +8,7 @@ begin
   end
   Kernel::at_exit do
     lines = Readline::HISTORY.to_a.reverse.uniq.reverse
-    lines = lines[-MAXHISTSIZE, MAXHISTSIZE] if lines.nitems > MAXHISTSIZE
+    lines = lines[-MAXHISTSIZE, MAXHISTSIZE] if lines.length > MAXHISTSIZE
     File::open(histfile, File::WRONLY|File::CREAT|File::TRUNC) do |io| 
       io.puts *lines
     end
