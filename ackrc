@@ -1,4 +1,6 @@
 --type-add
 js=.json
+--type-set
+puppet=.pp
 -G
 (?<![\-\.]min\.js)$
