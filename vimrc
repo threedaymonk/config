@@ -152,8 +152,7 @@ augroup Ruby
   autocmd BufRead,BufNewFile,BufEnter *.rb
     \ :nmap <leader>r :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
     \ :nmap <leader>c :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
-    \ :vmap b :!beautify-ruby<CR>|
-    \ :imap emd end
+    \ :vmap b :!beautify-ruby<CR>
   autocmd BufRead,BufNewFile,BufEnter *_spec.rb
     \ :nmap <leader>r :<C-U>!spec % \| tee /tmp/output.txt<CR>
 augroup END
