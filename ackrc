@@ -1,0 +1,4 @@
+--type-add
+js=.json
+-G
+(?<![\-\.]min\.js)$
