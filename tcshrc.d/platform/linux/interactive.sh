@@ -1,5 +1,6 @@
 setenv CLICOLOR 1
 setenv LSCOLORS ExGxcxdxCxegedabagacad
+setenv TERM xterm-256color
 
 alias ls 'ls --color=auto -N --show-control-chars'
 alias pbcopy 'xsel -i -b'
