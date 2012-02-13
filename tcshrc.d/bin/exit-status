@@ -1,0 +1,4 @@
+#!/bin/tcsh
+if ($1 > 0) then
+  echo -n "\033[41m[${1}]\033[0m "
+endif
