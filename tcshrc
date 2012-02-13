@@ -21,8 +21,8 @@ if ($?RUBY_VERSION) then
   set prompt_info = "[$RUBY_VERSION] $prompt_info"
 endif
 
-alias precmd '~/.tcshrc.d/bin/exit-status $?'
-set prompt = "%{\033[${prompt_color}m%}${prompt_info}%. %#%{\033[0m%} "
+alias precmd '~/.tcshrc.d/bin/exit-status $?; ~/.tcshrc.d/bin/git-info'
+set prompt = "%{\033[${prompt_color}m %}${prompt_info}%. %#%{\033[0m%} "
 set noding
 
 # Disable Ctrl-S.

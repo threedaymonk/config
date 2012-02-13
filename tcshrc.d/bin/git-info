@@ -1,0 +1,11 @@
+#!/bin/tcsh
+
+git branch >& /dev/null
+
+if ($? == 0) then
+  if ($?GIT_AUTHOR_NAME) then
+    echo -n "\033[30;43m [$GIT_AUTHOR_NAME]"
+  endif
+
+  echo -n "\033[30;43m `git branch --no-color | grep '^*' | cut -d ' ' -f 2` \033[0m"
+endif
