@@ -120,7 +120,7 @@ command! -complete=file -nargs=* Svn call s:RunShellCommand('svn '.<q-args>)
 
 function! Ack(args)
   let grepprg_bak=&grepprg
-  set grepprg=ack\ -H\ -a\ --nocolor\ --nogroup\ --ignore-dir=coverage\ --ignore-dir=tmp\ --ignore-dir=log
+  set grepprg=ack\ -H\ --nocolor\ --nogroup\ --ignore-dir=coverage\ --ignore-dir=tmp\ --ignore-dir=log
   execute "silent! grep " . a:args
   botright copen
   let &grepprg=grepprg_bak
