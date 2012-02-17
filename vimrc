@@ -145,7 +145,7 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 
 " Various useful Ruby command mode shortcuts
 " focused-test can be found at http://github.com/btakita/focused-test
-let g:ruby="ruby"
+let g:ruby="ruby -Itest"
 augroup Ruby
   au!
   autocmd BufRead,BufNewFile,BufEnter *_test.rb,test_*.rb,*_spec.rb
