@@ -145,13 +145,14 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 
 " Various useful Ruby command mode shortcuts
 " focused-test can be found at http://github.com/btakita/focused-test
+let g:ruby="ruby"
 augroup Ruby
   au!
   autocmd BufRead,BufNewFile,BufEnter *_test.rb,test_*.rb,*_spec.rb
     \ :nmap <leader>R V:<C-U>!focused-test -b -f % -l <C-R>=line(".")<CR> \| tee /tmp/output.txt<CR>
   autocmd BufRead,BufNewFile,BufEnter *.rb
-    \ :nmap <leader>r :<C-U>!ruby % \| tee /tmp/output.txt<CR>|
-    \ :nmap <leader>c :<C-U>!ruby -c % \| tee /tmp/output.txt<CR>|
+    \ :nmap <leader>r :<C-U>!<C-R>=g:ruby<CR> % \| tee /tmp/output.txt<CR>|
+    \ :nmap <leader>c :<C-U>!<C-R>=g:ruby<CR> -c % \| tee /tmp/output.txt<CR>|
     \ :vmap b :!beautify-ruby<CR>
   autocmd BufRead,BufNewFile,BufEnter *_spec.rb
     \ :nmap <leader>r :<C-U>!spec % \| tee /tmp/output.txt<CR>
@@ -163,12 +164,13 @@ augroup RHTML
     \ :vmap b :!htmlbeautifier<CR>
 augroup END
 
+let g:cucumber="bundle exec cucumber -r features"
 augroup Cucumber
   au!
   autocmd BufNewFile,BufReadPost,BufEnter *.feature,*.story
     \ set filetype=cucumber|
-    \ :nmap <leader>r :<C-U>!cucumber-runner %<CR>|
-    \ :nmap <leader>R :<C-U>!cucumber-runner -b %\:<C-R>=line(".")<CR><CR>
+    \ :nmap <leader>r :<C-U>!<C-R>=g:cucumber<CR> %<CR>|
+    \ :nmap <leader>R :<C-U>!<C-R>=g:cucumber<CR> -b %\:<C-R>=line(".")<CR><CR>
 augroup END
 
 autocmd BufNewFile,BufReadPost,BufEnter *.json set filetype=javascript
