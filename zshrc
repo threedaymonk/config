@@ -59,3 +59,5 @@ precmd() {
 bindkey "[Z" reverse-menu-complete
 bindkey "[B" history-search-forward
 bindkey "[A" history-search-backward
+
+keychain -q -Q --ignore-missing id_dsa id_rsa
