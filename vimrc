@@ -55,6 +55,9 @@ let mapleader = ","
 :imap <C-J> <ESC>:tabprevious<cr>i
 :imap <C-K> <ESC>:tabnext<cr>i
 
+" Use ^X to close a tab
+:map <C-X> :bd<CR>
+
 " Use ^N for :cnext
 :nmap <C-N> :cnext<CR>
 :map  <C-N> :cnext<CR>
@@ -146,16 +149,17 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 " Various useful Ruby command mode shortcuts
 " focused-test can be found at http://github.com/btakita/focused-test
 let g:ruby="ruby -Itest"
+let g:rspec="bundle exec rspec"
 augroup Ruby
   au!
   autocmd BufRead,BufNewFile,BufEnter *_test.rb,test_*.rb,*_spec.rb
     \ :nmap <leader>R V:<C-U>!focused-test -b -f % -l <C-R>=line(".")<CR> \| tee /tmp/output.txt<CR>
   autocmd BufRead,BufNewFile,BufEnter *.rb
-    \ :nmap <leader>r :<C-U>!<C-R>=g:ruby<CR> % \| tee /tmp/output.txt<CR>|
-    \ :nmap <leader>c :<C-U>!<C-R>=g:ruby<CR> -c % \| tee /tmp/output.txt<CR>|
+    \ :nmap <leader>r :w<CR>:<C-U>!<C-R>=g:ruby<CR> % \| tee /tmp/output.txt<CR>|
+    \ :nmap <leader>c :w<CR>:<C-U>!<C-R>=g:ruby<CR> -c % \| tee /tmp/output.txt<CR>|
     \ :vmap b :!beautify-ruby<CR>
   autocmd BufRead,BufNewFile,BufEnter *_spec.rb
-    \ :nmap <leader>r :<C-U>!spec % \| tee /tmp/output.txt<CR>
+    \ :nmap <leader>r :w<CR>:<C-U>!<C-R>=g:rspec<CR> % \| tee /tmp/output.txt<CR>
 augroup END
 
 augroup RHTML
