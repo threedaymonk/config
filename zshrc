@@ -33,6 +33,11 @@ export EDITOR='vim'
 export PAGER='less'
 export GREP_OPTIONS='--exclude=\*.svn\*'
 
+alias ls='ls --color=auto -N --show-control-chars -G'
+alias ll='ls -lah'
+alias vim='vim -p'
+alias youtube-dl='youtube-dl -t'
+
 # Disable Ctrl-S, because why would you ever want that?
 stty -ixon
 
