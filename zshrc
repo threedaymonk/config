@@ -48,7 +48,7 @@ precmd() {
   PS1="%F{black}%K{cyan} %(3~|[…]/|)%2~ >%b%f%k "
 
   if git branch >& /dev/null; then
-    PS1="%F{black}%K{yellow} $(git branch --no-color | grep '^*' | cut -d ' ' -f 2) ${PS1}"
+    PS1="%F{black}%K{yellow} $(git branch --no-color | grep '^*' | cut -d ' ' -f 2-) ${PS1}"
   fi
 
   if test $exit_status -ne 0; then
