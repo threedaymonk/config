@@ -39,6 +39,7 @@ alias ls='ls --color=auto -N --show-control-chars -G'
 alias ll='ls -lah'
 alias vim='vim -p'
 alias youtube-dl='youtube-dl -t'
+alias bx='bundle exec'
 
 # Disable Ctrl-S, because why would you ever want that?
 stty -ixon
