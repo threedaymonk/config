@@ -1,12 +1,14 @@
 autoload -Uz colors; colors
 autoload -Uz compinit; compinit
 
-setopt histignorealldups sharehistory
+# Don't exit if I type ^D
+setopt ignoreeof
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+setopt histignorealldups sharehistory
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
