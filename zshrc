@@ -41,6 +41,7 @@ alias ll='ls -lah'
 alias vim='vim -p'
 alias youtube-dl='youtube-dl -t'
 alias bx='bundle exec'
+alias rvm='rvm.sh'
 
 # Disable Ctrl-S, because why would you ever want that?
 stty -ixon
@@ -60,6 +61,10 @@ precmd() {
 
   if git branch >& /dev/null; then
     PS1="%F{black}%K{yellow} $(git branch --no-color | grep '^*' | cut -d ' ' -f 2-) ${PS1}"
+  fi
+
+  if [ $RUBY_VERSION ]; then
+    PS1="%F{black}%K{white} ${RUBY_VERSION} ${PS1}"
   fi
 
   if test $exit_status -ne 0; then
