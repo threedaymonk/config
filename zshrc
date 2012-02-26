@@ -34,6 +34,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 export EDITOR='vim'
 export PAGER='less'
 export GREP_OPTIONS='--exclude=\*.svn\*'
+export TERM='xterm-256color'
 
 alias ls='ls --color=auto -N --show-control-chars -G'
 alias ll='ls -lah'
