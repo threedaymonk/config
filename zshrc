@@ -43,11 +43,18 @@ alias youtube-dl='youtube-dl -t'
 # Disable Ctrl-S, because why would you ever want that?
 stty -ixon
 
+# Default prompt colours
+prompt_fg=black
+prompt_bg=green
+
+# Machine-specific settings
+source ~/.zshrc.local
+
 # Show stuff in prompt
 precmd() {
   exit_status=$?
 
-  PS1="%F{black}%K{cyan} %(3~|[…]/|)%2~ >%b%f%k "
+  PS1="%F{$prompt_fg}%K{$prompt_bg} %(3~|[…]/|)%2~ >%b%f%k "
 
   if git branch >& /dev/null; then
     PS1="%F{black}%K{yellow} $(git branch --no-color | grep '^*' | cut -d ' ' -f 2-) ${PS1}"
