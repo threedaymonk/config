@@ -42,6 +42,7 @@ alias vim='vim -p'
 alias youtube-dl='youtube-dl -t'
 alias bx='bundle exec'
 alias rvm='rvm.sh'
+alias private='unset HISTFILE'
 
 # Disable Ctrl-S, because why would you ever want that?
 stty -ixon
@@ -57,7 +58,15 @@ source ~/.zshrc.local
 precmd() {
   exit_status=$?
 
-  PS1="%F{$prompt_fg}%K{$prompt_bg} %(3~|[…]/|)%2~ >%b%f%k "
+  if [ $HISTFILE ]; then
+    fg=$prompt_fg
+    bg=$prompt_bg
+  else
+    fg=$prompt_bg
+    bg=$prompt_fg
+  fi
+
+  PS1="%F{$fg}%K{$bg} %(3~|[…]/|)%2~ >%b%f%k "
 
   if git branch >& /dev/null; then
     PS1="%F{black}%K{yellow} $(git branch --no-color | grep '^*' | cut -d ' ' -f 2-) ${PS1}"
