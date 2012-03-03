@@ -85,6 +85,15 @@ PS2="%F{$prompt_fg}%K{$prompt_bg}${PS2}%f%k"
 PS3="%F{$prompt_fg}%K{$prompt_bg}${PS3}%f%k"
 PS4="%F{$prompt_fg}%K{$prompt_bg}${PS4}%f%k"
 
+# Use pry for 'irb' if present
+irb() {
+  if $(which pry &> /dev/null); then
+    pry "$@";
+  else
+    $(which irb) "$@";
+  fi
+}
+
 bindkey "[Z" reverse-menu-complete
 bindkey "[B" history-search-forward
 bindkey "[A" history-search-backward
