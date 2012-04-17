@@ -178,6 +178,7 @@ augroup Cucumber
 augroup END
 
 autocmd BufNewFile,BufReadPost,BufEnter *.json set filetype=javascript
+autocmd BufNewFile,BufReadPost,BufEnter *.rabl set filetype=ruby
 
 nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 
