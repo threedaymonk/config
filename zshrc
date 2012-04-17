@@ -36,6 +36,11 @@ export PAGER='less'
 export GREP_OPTIONS='--exclude=\*.svn\*'
 export TERM='xterm-256color'
 
+# Set DICT to the British dictionary from 12dicts, if it exists
+if [ -e /opt/12dicts/ ]; then
+  export DICT=/opt/12dicts/2of4brif.txt
+fi
+
 alias ls='ls --color=auto -N --show-control-chars -G'
 alias ll='ls -lah'
 alias vim='vim -p'
