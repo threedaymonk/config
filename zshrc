@@ -100,7 +100,7 @@ irb() {
 }
 
 bindkey "[Z" reverse-menu-complete
-bindkey "[B" history-search-forward
-bindkey "[A" history-search-backward
+bindkey "[B" history-beginning-search-forward
+bindkey "[A" history-beginning-search-backward
 
 keychain -q -Q --ignore-missing id_dsa id_rsa
