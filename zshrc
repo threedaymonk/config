@@ -56,6 +56,14 @@ stty -ixon
 prompt_fg=black
 prompt_bg=green
 
+# Add directory to PATH if it exists and is not already there.
+prepend_path() {
+  to_add=$1
+  if [ -d $to_add ] && ( ! echo ":$PATH:" | grep -qF ":$to_add:" ); then
+    export PATH=$to_add:$PATH
+  fi
+}
+
 # Machine-specific settings
 source ~/.zshrc.local
 
