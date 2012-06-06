@@ -65,7 +65,9 @@ prepend_path() {
 }
 
 # Machine-specific settings
-source ~/.zshrc.local
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
 
 # Show stuff in prompt
 precmd() {
@@ -111,4 +113,6 @@ bindkey "[Z" reverse-menu-complete
 bindkey "[B" history-beginning-search-forward
 bindkey "[A" history-beginning-search-backward
 
-keychain -q -Q --ignore-missing id_dsa id_rsa
+if $(which keychain &> /dev/null); then
+  keychain -q -Q --ignore-missing id_dsa id_rsa
+fi
