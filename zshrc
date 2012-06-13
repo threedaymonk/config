@@ -64,6 +64,9 @@ prepend_path() {
   fi
 }
 
+# I always want my ~/bin directory
+prepend_path ~/bin
+
 # Machine-specific settings
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
