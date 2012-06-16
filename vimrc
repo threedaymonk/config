@@ -184,3 +184,11 @@ nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 
 " No more bell!
 autocmd VimEnter * set vb t_vb=
+
+" If there's a local .vimrc file, use it
+function! SourceVimLocal()
+  if filereadable(".vimrc")
+    source .vimrc
+  endif
+endfunction
+call SourceVimLocal()
