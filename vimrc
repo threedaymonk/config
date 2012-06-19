@@ -186,8 +186,10 @@ nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 autocmd VimEnter * set vb t_vb=
 
 " If there's a local .vimrc file, use it
+" Avoid infinite recursion by skipping this if we're in $HOME
 function! SourceVimLocal()
-  if filereadable(".vimrc")
+  if filereadable(".vimrc") && (expand($HOME) != getcwd())
+    echo "Loading local .vimrc"
     source .vimrc
   endif
 endfunction
