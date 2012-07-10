@@ -183,6 +183,9 @@ autocmd BufNewFile,BufReadPost,BufEnter *.css,*.scss,*.clj set isk+=-
 
 nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 
+" ,a to open a new tab with :Ack ready to go
+nmap <leader>a :tabe<CR>:Ack 
+
 " No more bell!
 autocmd VimEnter * set vb t_vb=
 
