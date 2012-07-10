@@ -179,6 +179,7 @@ augroup END
 
 autocmd BufNewFile,BufReadPost,BufEnter *.json set filetype=javascript
 autocmd BufNewFile,BufReadPost,BufEnter *.rabl set filetype=ruby
+autocmd BufNewFile,BufReadPost,BufEnter *.css,*.scss,*.clj set isk+=-
 
 nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 
