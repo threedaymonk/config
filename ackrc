@@ -6,5 +6,7 @@ scss=.scss
 puppet=.pp
 --type-set
 cucumber=.feature
+--type-set
+clojure=.clj
 -G
 (?<![\-\.]min\.js)$
