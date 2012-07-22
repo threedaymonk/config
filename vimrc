@@ -193,7 +193,6 @@ autocmd VimEnter * set vb t_vb=
 " Avoid infinite recursion by skipping this if we're in $HOME
 function! SourceVimLocal()
   if filereadable(".vimrc") && (expand($HOME) != getcwd())
-    echo "Loading local .vimrc"
     source .vimrc
   endif
 endfunction
