@@ -207,3 +207,7 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" X11 copy/paste integration
+map <leader>pc :w !xsel -i -b<CR>
+nmap <leader>pv :r!xsel -b<CR>
