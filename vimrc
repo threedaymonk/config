@@ -10,6 +10,8 @@ else
   autocmd VimEnter * if getcwd()=="/" | if strlen(@%) | cd %:p:h | else | cd | endif | endif
 endif
 
+call pathogen#infect()
+
 set nocompatible
 filetype on
 syntax on " Syntax highlighting
