@@ -117,5 +117,5 @@ bindkey "[B" history-beginning-search-forward
 bindkey "[A" history-beginning-search-backward
 
 if $(which keychain &> /dev/null); then
-  keychain -q -Q --ignore-missing id_dsa id_rsa
+  eval $(keychain --eval --quiet --quick --ignore-missing id_dsa id_rsa)
 fi
