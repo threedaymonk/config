@@ -46,7 +46,7 @@ set ttymouse=xterm
 " For use on a dark terminal
 set background=dark
 set t_Co=256
-colorscheme ir_black
+colorscheme subzero
 highlight ColorColumn ctermbg=black
 
 runtime! indent.vim
