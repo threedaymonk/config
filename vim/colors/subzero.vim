@@ -49,7 +49,7 @@ endif
 
 " Syntax highlighting
 hi Comment      ctermfg=243    ctermbg=none
-hi String       ctermfg=76     ctermbg=none
+hi String       ctermfg=46     ctermbg=none
 hi Number       ctermfg=13     ctermbg=none
 
 hi Keyword      ctermfg=153    ctermbg=none
