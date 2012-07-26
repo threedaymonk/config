@@ -185,6 +185,18 @@ autocmd BufNewFile,BufReadPost *.css,*.scss,*.clj setl isk+=-
 " Rainbow parens in Clojure
 let g:vimclojure#ParenRainbow=1
 
+let g:vimclojure#ParenRainbowColorsDark = {
+  \ '1': 'ctermfg=magenta',
+  \ '2': 'ctermfg=red',
+  \ '3': 'ctermfg=yellow',
+  \ '4': 'ctermfg=green',
+  \ '5': 'ctermfg=cyan',
+  \ '6': 'ctermfg=magenta',
+  \ '7': 'ctermfg=red',
+  \ '8': 'ctermfg=yellow',
+  \ '9': 'ctermfg=green'
+  \ }
+
 " ,v will open /tmp/output.txt as a cross-reference window
 nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 
