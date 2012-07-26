@@ -60,7 +60,7 @@ hi PreProc      ctermfg=153    ctermbg=none
 hi Conditional  ctermfg=110    ctermbg=none  " if else end
 
 hi Todo         ctermfg=245    ctermbg=none
-hi Constant     ctermfg=151    ctermbg=none
+hi Constant     ctermfg=141    ctermbg=none
 
 hi Identifier   ctermfg=189    ctermbg=none
 hi Function     ctermfg=215    ctermbg=none
