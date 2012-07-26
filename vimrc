@@ -182,6 +182,9 @@ autocmd BufNewFile,BufReadPost *.rabl setl filetype=ruby
 " Use hyphens in identifiers in some languages
 autocmd BufNewFile,BufReadPost *.css,*.scss,*.clj setl isk+=-
 
+" Rainbow parens in Clojure
+let g:vimclojure#ParenRainbow=1
+
 " ,v will open /tmp/output.txt as a cross-reference window
 nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 
