@@ -91,8 +91,9 @@ hi link Debug           Special
 
 
 " Ruby
-hi rubyRegexp                  ctermfg=179    ctermbg=none
-hi rubyRegexpDelimiter         ctermfg=215    ctermbg=none
+hi rubyRegexp                  ctermfg=208    ctermbg=none
+hi rubyRegexpDelimiter         ctermfg=130    ctermbg=none
+hi rubyRegexpSpecial           ctermfg=white  ctermbg=none
 hi rubyEscape                  ctermfg=white  ctermbg=none
 hi rubyInterpolationDelimiter  ctermfg=37     ctermbg=none
 hi rubyControl                 ctermfg=110    ctermbg=none  "and break, etc
