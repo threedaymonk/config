@@ -38,6 +38,9 @@ hi WarningMsg    ctermfg=white  ctermbg=203     cterm=bold
 " Message displayed in lower left, such as --INSERT--
 hi ModeMsg       ctermfg=yellow   ctermbg=none     cterm=bold
 
+" Right-hand margin indicator
+highlight ColorColumn ctermbg=234
+
 if version >= 700 " Vim 7.x specific colors
   hi CursorLine    ctermfg=none  ctermbg=233
   hi CursorColumn  ctermfg=none  ctermbg=233

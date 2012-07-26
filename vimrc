@@ -47,7 +47,6 @@ set ttymouse=xterm
 set background=dark
 set t_Co=256
 colorscheme subzero
-highlight ColorColumn ctermbg=black
 
 runtime! indent.vim
 runtime! macros/matchit.vim " Use % to match if/end etc.
