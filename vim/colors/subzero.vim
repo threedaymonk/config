@@ -44,7 +44,7 @@ highlight ColorColumn ctermbg=234
 if version >= 700 " Vim 7.x specific colors
   hi CursorLine    ctermfg=none  ctermbg=233
   hi CursorColumn  ctermfg=none  ctermbg=233
-  hi MatchParen    ctermfg=136   ctermbg=130   cterm=bold
+  hi MatchParen    ctermfg=232   ctermbg=166   cterm=bold
   hi Pmenu         ctermfg=136   ctermbg=238
   hi PmenuSel      ctermfg=0     ctermbg=64
   hi Search        ctermfg=none  ctermbg=none  cterm=underline
