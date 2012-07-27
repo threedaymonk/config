@@ -41,7 +41,7 @@ if [ -e /opt/12dicts/ ]; then
   export DICT=/opt/12dicts/2of4brif.txt
 fi
 
-alias ls='ls --color=auto -N --show-control-chars -G'
+alias ls='ls --color=auto -N --show-control-chars'
 alias ll='ls -lah'
 alias vim='vim -p'
 alias youtube-dl='youtube-dl -t'
