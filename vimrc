@@ -54,6 +54,7 @@ runtime! macros/matchit.vim " Use % to match if/end etc.
 
 " Use , instead of \ as the user modifier. Easier to reach.
 let mapleader = ","
+let maplocalleader = ","
 
 " Use ^J/^K to move between tabs
 :nmap <C-J> :tabprevious<cr>
