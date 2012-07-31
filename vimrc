@@ -1,3 +1,7 @@
+" Use Pathogen to load bundles from ~/.vim/bundle
+call pathogen#infect()
+filetype plugin indent on
+
 " Get a good value for $PATH.
 let $PATH = system("printenv PATH")
 let $PATH = substitute($PATH, "\<C-J>$", "", "")
@@ -9,9 +13,6 @@ if !has("gui_running")
 else
   autocmd VimEnter * if getcwd()=="/" | if strlen(@%) | cd %:p:h | else | cd | endif | endif
 endif
-
-" Use Pathogen to load bundles from ~/.vim/bundle
-call pathogen#infect()
 
 " General defaults
 set nocompatible
