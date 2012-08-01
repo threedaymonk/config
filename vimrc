@@ -31,7 +31,9 @@ set showmatch " show matching parenthesis etc.
 set hidden
 set ruler
 set scrolloff=3
-set colorcolumn=80
+if exists("&colorcolumn")
+  set colorcolumn=80
+end
 set encoding=utf-8
 set fileencoding=utf-8
 
