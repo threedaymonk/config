@@ -2,7 +2,7 @@
 
 origin=$(pwd)
 cd $HOME
-for f in ackrc ctags tmux.conf vimrc vim zshenv zshrc; do
+for f in ackrc ctags tmux.conf vimrc vim zshenv zshrc gitignore; do
   ln -sfn "$origin/$f" ".$f"
 done
 
