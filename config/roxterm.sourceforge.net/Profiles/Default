@@ -1,3 +1,7 @@
 
 [roxterm profile]
-font=DejaVu Sans Mono 11
+font=DejaVu Sans Mono 10
+hide_menubar=1
+always_show_tabs=0
+maximise=1
+audible_bell=0
