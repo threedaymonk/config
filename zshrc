@@ -122,6 +122,6 @@ bindkey "[Z" reverse-menu-complete
 bindkey "[B" history-beginning-search-forward
 bindkey "[A" history-beginning-search-backward
 
-if $(which keychain &> /dev/null); then
-  eval $(keychain --eval --quiet --quick --ignore-missing id_dsa id_rsa)
+if /usr/bin/which gnome-keyring-daemon > /dev/null; then
+  eval $(gnome-keyring-daemon --daemonize --start)
 fi
