@@ -18,7 +18,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-if /usr/bin/which dircolors; then
+if /usr/bin/which dircolors >/dev/null; then
   eval "$(dircolors -b)"
 fi
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
