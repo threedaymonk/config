@@ -1,4 +1,4 @@
 
 [roxterm options]
-colour_scheme=Tango
-warn_close=2
+colour_scheme=Default
+warn_close=1
