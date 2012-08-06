@@ -1,3 +1,5 @@
 /conky/var/*
 /vim/.netrwhist
 *.rbc
+/config/xfce4/desktop
+xfce4-mixer.xml
