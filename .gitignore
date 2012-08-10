@@ -3,3 +3,6 @@
 *.rbc
 /config/xfce4/desktop
 xfce4-mixer.xml
+config/xfce4/xfconf/xfce-perchannel-xml/displays.xml
+config/xfce4/xfconf/xfce-perchannel-xml/ristretto.xml
+config/xfce4/xfce4-screenshooter
