@@ -9,6 +9,7 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="2"/>
+        <value type="int" value="13"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
         <value type="int" value="10"/>
@@ -60,5 +61,6 @@
     <property name="plugin-9" type="string" value="xfsm-logout-plugin"/>
     <property name="plugin-10" type="string" value="xfce4-clipman-plugin"/>
     <property name="plugin-6" type="string" value="separator"/>
+    <property name="plugin-13" type="string" value="weather"/>
   </property>
 </channel>
