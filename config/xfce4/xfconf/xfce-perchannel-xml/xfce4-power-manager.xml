@@ -3,7 +3,9 @@
 <channel name="xfce4-power-manager" version="1.0">
   <property name="xfce4-power-manager" type="empty">
     <property name="power-button-action" type="empty"/>
-    <property name="lid-action-on-ac" type="uint" value="1"/>
+    <property name="lid-action-on-ac" type="uint" value="0"/>
     <property name="lid-action-on-battery" type="uint" value="1"/>
+    <property name="dpms-on-ac-sleep" type="uint" value="0"/>
+    <property name="dpms-on-ac-off" type="uint" value="5"/>
   </property>
 </channel>
