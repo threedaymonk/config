@@ -14,10 +14,8 @@
   <property name="backdrop" type="empty">
     <property name="screen0" type="empty">
       <property name="monitor0" type="empty">
-        <property name="image-path" type="string" value="/usr/share/xfce4/backdrops/xubuntu-precise-right.png"/>
+        <property name="image-path" type="empty"/>
         <property name="image-show" type="empty"/>
-        <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-precise-right.png"/>
-        <property name="last-single-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-precise-right.png"/>
       </property>
       <property name="monitor1" type="empty">
         <property name="image-path" type="empty"/>
