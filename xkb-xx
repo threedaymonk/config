@@ -26,9 +26,7 @@ xkb_symbols "basic" {
   key <AB08> { [ comma,        less,        dead_cedilla ] };
 
   include "level3(ralt_switch)"
-
-  key <CAPS> { symbols[Group1]= [ Control_L ] };
-  modifier_map  Control { <CAPS>, <LCTL> };
-
-  key <RCTL> { [  Multi_key ] };
+  include "ctrl(nocaps)"
+  include "compose(rctrl)"
+  include "compose(rwin)"
 };
