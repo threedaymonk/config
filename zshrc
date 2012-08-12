@@ -122,6 +122,6 @@ bindkey "[Z" reverse-menu-complete
 bindkey "[B" history-beginning-search-forward
 bindkey "[A" history-beginning-search-backward
 
-if /usr/bin/which gnome-keyring-daemon > /dev/null; then
+if [ $DISPLAY ] && /usr/bin/which gnome-keyring-daemon > /dev/null; then
   eval $(gnome-keyring-daemon --daemonize --start)
 fi
