@@ -9,6 +9,7 @@ for f in \
   ctags \
   fonts.conf \
   gitignore \
+  jshintrc \
   tmux.conf \
   vim \
   vimrc \
