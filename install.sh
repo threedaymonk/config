@@ -3,17 +3,17 @@
 origin=$(pwd)
 cd $HOME
 for f in \
+  Xdefaults \
+  Xresources \
   ackrc \
   ctags \
-  gitignore \
   fonts.conf \
+  gitignore \
   tmux.conf \
-  vimrc \
   vim \
+  vimrc \
   zshenv \
-  zshrc \
-  Xdefaults \
-  Xresources ;
+  zshrc ;
 do
   ln -sfn "$origin/$f" ".$f"
 done
