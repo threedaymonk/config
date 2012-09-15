@@ -202,6 +202,14 @@ let g:vimclojure#ParenRainbowColorsDark = {
 let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#WantNailgun = 1
 
+" Rainbow parens in Scheme
+autocmd BufNewFile,BufReadPost *.scm
+  \ syn region level1 matchgroup=level1c start=/(/ end=/)/ contains=TOP,level1,level2,level3,level4,level5,NoInParens |
+  \ syn region level2 matchgroup=level2c start=/(/ end=/)/ contains=TOP,level2,level3,level4,level5,NoInParens |
+  \ syn region level3 matchgroup=level3c start=/(/ end=/)/ contains=TOP,level3,level4,level5,NoInParens |
+  \ syn region level4 matchgroup=level4c start=/(/ end=/)/ contains=TOP,level4,level5,NoInParens |
+  \ syn region level5 matchgroup=level5c start=/(/ end=/)/ contains=TOP,level5,NoInParens |
+
 " ,v will open /tmp/output.txt as a cross-reference window
 nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
 

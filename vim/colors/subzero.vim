@@ -138,3 +138,10 @@ hi link javaScriptNumber      Number
 
 " C#
 hi  link csXmlTag             Keyword
+
+" Rainbow parens
+hi level1c ctermfg=magenta
+hi level2c ctermfg=red
+hi level3c ctermfg=208
+hi level4c ctermfg=yellow
+hi level5c ctermfg=green
