@@ -1,0 +1,21 @@
+[SL_Cpu]
+Enabled=true
+Use_Label=true
+Color=#1E90FF
+Text=C\ 
+
+[SL_Mem]
+Enabled=true
+Use_Label=true
+Color=#00C000
+Text=\ M\ 
+
+[SL_Swap]
+Enabled=false
+Use_Label=true
+Color=#F0F000
+Text=swap
+
+[SL_Uptime]
+Enabled=false
+

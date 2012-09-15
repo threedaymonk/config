@@ -15,6 +15,7 @@
         <value type="int" value="10"/>
         <value type="int" value="5"/>
         <value type="int" value="27"/>
+        <value type="int" value="8"/>
         <value type="int" value="7"/>
         <value type="int" value="6"/>
         <value type="int" value="9"/>
@@ -62,5 +63,6 @@
     <property name="plugin-10" type="string" value="xfce4-clipman-plugin"/>
     <property name="plugin-6" type="string" value="separator"/>
     <property name="plugin-13" type="string" value="weather"/>
+    <property name="plugin-8" type="string" value="systemload"/>
   </property>
 </channel>
