@@ -13,12 +13,16 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+bin-exists() {
+  /usr/bin/which $1 >/dev/null
+}
+
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-if /usr/bin/which dircolors >/dev/null; then
+if bin-exists dircolors; then
   eval "$(dircolors -b)"
 fi
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
@@ -111,7 +115,7 @@ PS4="%F{$prompt_fg}%K{$prompt_bg}${PS4}%f%k"
 
 # Use pry for 'irb' if present
 irb() {
-  if /usr/bin/which pry > /dev/null; then
+  if bin-exists pry; then
     pry "$@";
   else
     $(/usr/bin/which irb) "$@";
@@ -122,6 +126,6 @@ bindkey "[Z" reverse-menu-complete
 bindkey "[B" history-beginning-search-forward
 bindkey "[A" history-beginning-search-backward
 
-if [ $DISPLAY ] && /usr/bin/which gnome-keyring-daemon > /dev/null; then
+if [ $DISPLAY ] && bin-exists gnome-keyring-daemon; then
   eval $(gnome-keyring-daemon --daemonize --start)
 fi
