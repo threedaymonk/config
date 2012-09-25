@@ -133,3 +133,5 @@ fi
 if bin-exists xdg-open; then
   alias open=xdg-open
 fi
+
+alias csi="rlwrap csi"
