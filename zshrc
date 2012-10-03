@@ -99,8 +99,8 @@ precmd() {
     PS1="%F{black}%K{yellow} $(git branch --no-color | grep '^*' | cut -d ' ' -f 2-) ${PS1}"
   fi
 
-  if [ $RUBY_VERSION ]; then
-    PS1="%F{black}%K{white} ${RUBY_VERSION} ${PS1}"
+  if [ $RBENV_VERSION ]; then
+    PS1="%F{black}%K{white} ${RBENV_VERSION} ${PS1}"
   fi
 
   if test $exit_status -ne 0; then
@@ -134,3 +134,11 @@ if bin-exists xdg-open; then
 fi
 
 alias csi="rlwrap csi"
+
+rbenv-init() {
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  unalias rbenv
+  eval "$(rbenv init -)"
+  rbenv "$@"
+}
+alias rbenv=rbenv-init
