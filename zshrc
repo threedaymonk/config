@@ -138,6 +138,7 @@ alias csi="rlwrap csi"
 rbenv-init() {
   export PATH="$HOME/.rbenv/bin:$PATH"
   unalias rbenv
+  alias bundle="rbenv exec bundle"
   eval "$(rbenv init -)"
   rbenv "$@"
 }
