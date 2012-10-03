@@ -56,7 +56,6 @@ alias ll='ls -lah'
 alias vim='vim -p'
 alias youtube-dl='youtube-dl -t'
 alias bx='bundle exec'
-alias rvm='rvm.sh'
 alias private='unset HISTFILE'
 
 # Disable Ctrl-S, because why would you ever want that?
