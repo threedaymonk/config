@@ -115,9 +115,9 @@ PS4="%F{$prompt_fg}%K{$prompt_bg}${PS4}%f%k"
 # Use pry for 'irb' if present
 irb() {
   if bin-exists pry; then
-    pry "$@";
+    pry "$@"
   else
-    $(/usr/bin/which irb) "$@";
+    $(/usr/bin/which irb) "$@"
   fi
 }
 
