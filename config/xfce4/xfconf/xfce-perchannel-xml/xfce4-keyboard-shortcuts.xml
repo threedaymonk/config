@@ -38,6 +38,7 @@
       <property name="&lt;Super&gt;4" type="string" value="gnumeric"/>
       <property name="&lt;Super&gt;r" type="string" value="xfce4-appfinder"/>
       <property name="override" type="bool" value="true"/>
+      <property name="&lt;Super&gt;x" type="string" value="/home/paul/bin/monitors"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
