@@ -154,30 +154,19 @@ vmap \| :!$HOME/.vim/bin/tableify<CR>
 " focused-test can be found at http://github.com/btakita/focused-test
 let g:ruby="ruby -Itest"
 let g:rspec="bundle exec rspec"
-augroup Ruby
-  au!
-  autocmd BufNewFile,BufReadPost *.rb
-    \ :nmap <leader>r :w<CR>:<C-U>!<C-R>=g:ruby<CR> % \| tee /tmp/output.txt<CR>|
-    \ :nmap <leader>c :w<CR>:<C-U>!<C-R>=g:ruby<CR> -c % \| tee /tmp/output.txt<CR>|
-    \ :vmap b :!beautify-ruby<CR>
-  autocmd BufNewFile,BufReadPost *_spec.rb
-    \ :nmap <leader>r :w<CR>:<C-U>!<C-R>=g:rspec<CR> % \| tee /tmp/output.txt<CR>
-augroup END
+autocmd BufNewFile,BufReadPost *.rb
+  \ :nmap <leader>r :w<CR>:<C-U>!<C-R>=g:ruby<CR> % \| tee /tmp/output.txt<CR>|
+  \ :nmap <leader>c :w<CR>:<C-U>!<C-R>=g:ruby<CR> -c % \| tee /tmp/output.txt<CR>|
+  \ :vmap b :!beautify-ruby<CR>
+autocmd BufNewFile,BufReadPost *_spec.rb
+  \ :nmap <leader>r :w<CR>:<C-U>!<C-R>=g:rspec<CR> % \| tee /tmp/output.txt<CR>
 
-augroup RHTML
-  au!
-  autocmd BufNewFile,BufReadPost *.rhtml,*.html.erb
-    \ :vmap b :!htmlbeautifier<CR>
-augroup END
+autocmd BufNewFile,BufReadPost *.rhtml,*.html.erb :vmap b :!htmlbeautifier<CR>
 
 let g:cucumber="bundle exec cucumber -r features"
-augroup Cucumber
-  au!
-  autocmd BufNewFile,BufReadPost *.feature,*.story
-    \ setl filetype=cucumber|
-    \ :nmap <leader>r :<C-U>!<C-R>=g:cucumber<CR> %<CR>|
-    \ :nmap <leader>R :<C-U>!<C-R>=g:cucumber<CR> -b %\:<C-R>=line(".")<CR><CR>
-augroup END
+autocmd BufNewFile,BufReadPost *.feature,*.story
+  \ :nmap <leader>r :<C-U>!<C-R>=g:cucumber<CR> %<CR>|
+  \ :nmap <leader>R :<C-U>!<C-R>=g:cucumber<CR> -b %\:<C-R>=line(".")<CR><CR>
 
 " Additional filetypes
 autocmd BufNewFile,BufReadPost *.json setl filetype=javascript
