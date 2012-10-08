@@ -36,6 +36,7 @@ if exists("&colorcolumn")
 end
 set encoding=utf-8
 set fileencoding=utf-8
+set incsearch " Show first match when typing a search
 
 " Override default tab settings for some filetypes
 autocmd BufNewFile,BufReadPost Makefile* setl noet | setl ts=8 | setl sw=8
