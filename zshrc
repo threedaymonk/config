@@ -54,9 +54,13 @@ else
 fi
 alias ll='ls -lah'
 alias vim='vim -p'
-alias youtube-dl='youtube-dl -t'
-alias bx='bundle exec'
 alias private='unset HISTFILE'
+
+alias bx='bundle exec'
+alias rails='bundle exec rails'
+alias cucumber='bundle exec cucumber -r features'
+alias rspec='bundle exec rspec'
+alias spork='bundle exec spork'
 
 # Disable Ctrl-S, because why would you ever want that?
 stty -ixon
