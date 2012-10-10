@@ -142,7 +142,7 @@ command! -nargs=* -complete=file Ack call Ack(<q-args>)
 " Run a shell command and put its output in a quickfix buffer
 let g:command_output=".quickfix.tmp"
 function! s:RunShellCommandToQuickfix(cmdline)
-  execute '!'.a:cmdline.' | tee '.g:command_output
+  execute '!'.a:cmdline.' | ansitee -s '.g:command_output
 endfunction
 command! -nargs=+ -complete=command ToQF call s:RunShellCommandToQuickfix(<q-args>)
 
@@ -154,7 +154,7 @@ vmap \| :!$HOME/.vim/bin/tableify<CR>
 " Various useful Ruby command mode shortcuts
 " focused-test can be found at http://github.com/btakita/focused-test
 let g:ruby="ruby -Itest"
-let g:rspec="bundle exec rspec"
+let g:rspec="bundle exec rspec --color --tty"
 autocmd BufNewFile,BufReadPost *.rb
   \ :nmap <leader>r :w<CR>:ToQF <C-R>=g:ruby<CR> %<CR>|
   \ :nmap <leader>c :w<CR>:ToQF <C-R>=g:ruby<CR> -c %<CR>|
@@ -167,7 +167,7 @@ autocmd BufNewFile,BufReadPost *_spec.rb
 autocmd BufNewFile,BufReadPost *.rhtml,*.html.erb
   \ :vmap b :!htmlbeautifier<CR>
 
-let g:cucumber="bundle exec cucumber -r features"
+let g:cucumber="bundle exec cucumber -r features --color"
 autocmd BufNewFile,BufReadPost *.feature,*.story
   \ :nmap <leader>r :w<CR>:ToQF <C-R>=g:cucumber<CR> %<CR>|
   \ :nmap <leader>R :w<CR>:ToQF <C-R>=g:cucumber<CR> -b %\:<C-R>=line(".")<CR><CR>|
