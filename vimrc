@@ -140,11 +140,11 @@ endfunction
 command! -nargs=* -complete=file Ack call Ack(<q-args>)
 
 " Run a shell command and put its output in a quickfix buffer
-function! s:RunShellCommandToQuickFix(cmdline)
-  execute '!'.escape(a:cmdline.' | tee /tmp/output.txt','%#')
-  1
+let g:command_output=".quickfix.tmp"
+function! s:RunShellCommandToQuickfix(cmdline)
+  execute '!'.a:cmdline.' | tee '.g:command_output
 endfunction
-command! -nargs=* Rake call s:RunShellCommandToQuickFix('rake '.<q-args>)
+command! -nargs=+ -complete=command ToQF call s:RunShellCommandToQuickfix(<q-args>)
 
 " Line up stuff in visual mode
 vmap =  :!$HOME/.vim/bin/line-up-equals<CR>
@@ -156,18 +156,21 @@ vmap \| :!$HOME/.vim/bin/tableify<CR>
 let g:ruby="ruby -Itest"
 let g:rspec="bundle exec rspec"
 autocmd BufNewFile,BufReadPost *.rb
-  \ :nmap <leader>r :w<CR>:<C-U>!<C-R>=g:ruby<CR> % \| tee /tmp/output.txt<CR>|
-  \ :nmap <leader>c :w<CR>:<C-U>!<C-R>=g:ruby<CR> -c % \| tee /tmp/output.txt<CR>|
+  \ :nmap <leader>r :w<CR>:ToQF <C-R>=g:ruby<CR> %<CR>|
+  \ :nmap <leader>c :w<CR>:ToQF <C-R>=g:ruby<CR> -c %<CR>|
   \ :vmap b :!beautify-ruby<CR>
 autocmd BufNewFile,BufReadPost *_spec.rb
-  \ :nmap <leader>r :w<CR>:<C-U>!<C-R>=g:rspec<CR> % \| tee /tmp/output.txt<CR>
+  \ :nmap <leader>r :w<CR>:ToQF <C-R>=g:rspec<CR> %<CR>|
+  \ :nmap <leader>R :w<CR>:ToQF <C-R>=g:rspec<CR> %\:<C-R>=line(".")<CR><CR>|
+  \ :set errorformat=rspec\ %f:%l\ #\ %m
 
-autocmd BufNewFile,BufReadPost *.rhtml,*.html.erb :vmap b :!htmlbeautifier<CR>
+autocmd BufNewFile,BufReadPost *.rhtml,*.html.erb
+  \ :vmap b :!htmlbeautifier<CR>
 
 let g:cucumber="bundle exec cucumber -r features"
 autocmd BufNewFile,BufReadPost *.feature,*.story
-  \ :nmap <leader>r :<C-U>!<C-R>=g:cucumber<CR> %<CR>|
-  \ :nmap <leader>R :<C-U>!<C-R>=g:cucumber<CR> -b %\:<C-R>=line(".")<CR><CR>
+  \ :nmap <leader>r :w<CR>:ToQF <C-R>=g:cucumber<CR> %<CR>|
+  \ :nmap <leader>R :w<CR>:ToQF <C-R>=g:cucumber<CR> -b %\:<C-R>=line(".")<CR><CR>|
 
 " Additional filetypes
 autocmd BufNewFile,BufReadPost *.json setl filetype=javascript
@@ -200,8 +203,8 @@ autocmd BufNewFile,BufReadPost *.scm
   \ syn region level4 matchgroup=level4c start=/(/ end=/)/ contains=TOP,level4,level5,NoInParens |
   \ syn region level5 matchgroup=level5c start=/(/ end=/)/ contains=TOP,level5,NoInParens |
 
-" ,v will open /tmp/output.txt as a cross-reference window
-nmap <leader>v :cfile /tmp/output.txt<CR>:copen<CR>
+" ,v will open <C-R>=g:command_output<CR> as a cross-reference window
+nmap <leader>v :cfile <C-R>=g:command_output<CR><CR>:copen<CR>
 
 " ,a to open a new tab with :Ack ready to go
 nmap <leader>a :tabe<CR>:Ack 
