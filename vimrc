@@ -39,9 +39,9 @@ set fileencoding=utf-8
 set incsearch " Show first match when typing a search
 
 " Override default tab settings for some filetypes
-autocmd BufNewFile,BufReadPost Makefile* setl noet | setl ts=8 | setl sw=8
+autocmd FileType make setl noet | setl ts=8 | setl sw=8
+autocmd FileType python setl ts=4 | setl sw=4 " PEP 8
 autocmd BufNewFile,BufReadPost *.tsv setl noet | setl ts=16 | setl sw=16
-autocmd BufNewFile,BufReadPost *.py setl ts=4 | setl sw=4 " PEP 8
 
 " Mouse support under tmux
 set mouse=a
@@ -154,30 +154,28 @@ vmap \| :!$HOME/.vim/bin/tableify<CR>
 " Various useful Ruby command mode shortcuts
 " focused-test can be found at http://github.com/btakita/focused-test
 let g:ruby="ruby -Itest"
-let g:rspec="bundle exec rspec --color --tty"
-autocmd BufNewFile,BufReadPost *.rb
-  \ :nmap <leader>r :w<CR>:ToQF <C-R>=g:ruby<CR> %<CR>|
-  \ :nmap <leader>c :w<CR>:ToQF <C-R>=g:ruby<CR> -c %<CR>|
-  \ :vmap b :!beautify-ruby<CR>
-autocmd BufNewFile,BufReadPost *_spec.rb
-  \ :nmap <leader>r :w<CR>:ToQF <C-R>=g:rspec<CR> %<CR>|
-  \ :nmap <leader>R :w<CR>:ToQF <C-R>=g:rspec<CR> %\:<C-R>=line(".")<CR><CR>|
-  \ :set errorformat=rspec\ %f:%l\ #\ %m
+autocmd FileType ruby
+  \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:ruby<CR> %<CR>|
+  \ nmap <buffer> <leader>c :w<CR>:ToQF <C-R>=g:ruby<CR> -c %<CR>
 
-autocmd BufNewFile,BufReadPost *.rhtml,*.html.erb
-  \ :vmap b :!htmlbeautifier<CR>
+let g:rspec="bundle exec rspec --color --tty"
+autocmd FileType rspec
+  \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:rspec<CR> %<CR>|
+  \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:rspec<CR> %\:<C-R>=line(".")<CR><CR>|
+  \ setlocal errorformat=rspec\ %f:%l\ #\ %m
 
 let g:cucumber="bundle exec cucumber -r features --color"
-autocmd BufNewFile,BufReadPost *.feature,*.story
-  \ :nmap <leader>r :w<CR>:ToQF <C-R>=g:cucumber<CR> %<CR>|
-  \ :nmap <leader>R :w<CR>:ToQF <C-R>=g:cucumber<CR> -b %\:<C-R>=line(".")<CR><CR>|
+autocmd FileType cucumber
+  \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:cucumber<CR> %<CR>|
+  \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:cucumber<CR> -b %\:<C-R>=line(".")<CR><CR>|
 
 " Additional filetypes
 autocmd BufNewFile,BufReadPost *.json setl filetype=javascript
 autocmd BufNewFile,BufReadPost *.rabl setl filetype=ruby
+autocmd BufNewFile,BufReadPost *_spec.rb setl filetype=rspec syntax=ruby
 
 " Use hyphens in identifiers in some languages
-autocmd BufNewFile,BufReadPost *.css,*.scss,*.clj setl isk+=-
+autocmd BufNewFile,BufReadPost *.css,*.scss,*.clj,*.scm setl isk+=-
 
 " Rainbow parens in Clojure
 let g:vimclojure#ParenRainbow = 1
@@ -196,7 +194,7 @@ let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#WantNailgun = 1
 
 " Rainbow parens in Scheme
-autocmd BufNewFile,BufReadPost *.scm
+autocmd FileType scheme
   \ syn region level1 matchgroup=level1c start=/(/ end=/)/ contains=TOP,level1,level2,level3,level4,level5,NoInParens |
   \ syn region level2 matchgroup=level2c start=/(/ end=/)/ contains=TOP,level2,level3,level4,level5,NoInParens |
   \ syn region level3 matchgroup=level3c start=/(/ end=/)/ contains=TOP,level3,level4,level5,NoInParens |
