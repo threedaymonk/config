@@ -10,3 +10,5 @@ cucumber=.feature
 clojure=.clj
 -G
 (?<![\-\.]min\.js)$
+--ignore-dir
+.bundle

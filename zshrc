@@ -56,12 +56,6 @@ alias ll='ls -lah'
 alias vim='vim -p'
 alias private='unset HISTFILE'
 
-alias bx='bundle exec'
-alias rails='bundle exec rails'
-alias cucumber='bundle exec cucumber -r features'
-alias rspec='bundle exec rspec'
-alias spork='bundle exec spork'
-
 # Disable Ctrl-S, because why would you ever want that?
 stty -ixon
 
@@ -69,16 +63,19 @@ stty -ixon
 prompt_fg=black
 prompt_bg=green
 
-# Add directory to PATH if it exists and is not already there.
+# Add directory to PATH if it is not already there.
 prepend_path() {
   to_add=$1
-  if [ -d $to_add ] && ( ! echo ":$PATH:" | grep -qF ":$to_add:" ); then
+  if ( ! echo ":$PATH:" | grep -qF ":$to_add:" ); then
     export PATH=$to_add:$PATH
   fi
 }
 
 # I always want my ~/bin directory
 prepend_path ~/bin
+
+# Avoid typing bundle exec (in conjunction with binstubs)
+prepend_path "./.bundle/bin"
 
 # Machine-specific settings
 if [ -f ~/.zshrc.local ]; then

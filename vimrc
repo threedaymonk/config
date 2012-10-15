@@ -158,13 +158,13 @@ autocmd FileType ruby
   \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:ruby<CR> %<CR>|
   \ nmap <buffer> <leader>c :w<CR>:ToQF <C-R>=g:ruby<CR> -c %<CR>
 
-let g:rspec="bundle exec rspec --color --tty"
+let g:rspec="rspec --color --tty"
 autocmd FileType rspec
   \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:rspec<CR> %<CR>|
   \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:rspec<CR> %\:<C-R>=line(".")<CR><CR>|
   \ setlocal errorformat=rspec\ %f:%l\ #\ %m
 
-let g:cucumber="bundle exec cucumber -r features --color"
+let g:cucumber="cucumber -r features --color"
 autocmd FileType cucumber
   \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:cucumber<CR> %<CR>|
   \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:cucumber<CR> -b %\:<C-R>=line(".")<CR><CR>|
