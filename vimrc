@@ -79,7 +79,7 @@ let maplocalleader = ","
 augroup JumpCursorOnEdit
   au!
   autocmd BufReadPost *
-    \ if expand("<afile>:p:h") !=? $TEMP |
+    \ if &syntax != 'gitcommit' && expand("<afile>:p:h") !=? $TEMP |
     \   if line("'\"") > 1 && line("'\"") <= line("$") |
     \     let JumpCursorOnEdit_foo = line("'\"") |
     \     let b:doopenfold = 1 |
