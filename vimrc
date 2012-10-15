@@ -147,9 +147,9 @@ endfunction
 command! -nargs=+ -complete=command ToQF call s:RunShellCommandToQuickfix(<q-args>)
 
 " Line up stuff in visual mode
-vmap =  :!$HOME/.vim/bin/line-up-equals<CR>
-vmap ,  :!$HOME/.vim/bin/line-up-commas<CR>
-vmap \| :!$HOME/.vim/bin/tableify<CR>
+vmap <leader>l=  :!$HOME/.vim/bin/line-up-equals<CR>
+vmap <leader>l,  :!$HOME/.vim/bin/line-up-commas<CR>
+vmap <leader>l\| :!$HOME/.vim/bin/tableify<CR>
 
 " Various useful Ruby command mode shortcuts
 " focused-test can be found at http://github.com/btakita/focused-test
