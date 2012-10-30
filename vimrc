@@ -167,7 +167,7 @@ autocmd FileType rspec
 let g:cucumber="cucumber -r features --color"
 autocmd FileType cucumber
   \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:cucumber<CR> %<CR>|
-  \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:cucumber<CR> -b %\:<C-R>=line(".")<CR><CR>|
+  \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:cucumber<CR> %\:<C-R>=line(".")<CR><CR>|
 
 " Additional filetypes
 autocmd BufNewFile,BufReadPost *.json setl filetype=javascript
