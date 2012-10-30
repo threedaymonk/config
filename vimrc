@@ -232,3 +232,5 @@ inoremap <right> <nop>
 " X11 copy/paste integration
 map <leader>pc :w !xsel -i -b<CR>
 nmap <leader>pv :r!xsel -b<CR>
+
+set wildignore+=*/.bundle/*,*/coverage/*
