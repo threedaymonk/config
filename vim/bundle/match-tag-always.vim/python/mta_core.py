@@ -24,7 +24,7 @@ TAG_REGEX = re.compile(
   r"""<\s*                    # the opening bracket + whitespace
       (?P<start_slash>/)?     # captures the slash if closing bracket
       \s*                     # more whitespace
-      (?P<tag_name>[\w:-]+)   # the tag name, captured
+      (?P<tag_name>[%:\w:-]+) # the tag name, captured
       .*?                     # anything else in the tag
       (?P<end_slash>/)?       # ending slash, for self-closed tags
       >""",
@@ -47,7 +47,9 @@ class Tag( object ):
     self.valid = True
     self.name = match_object.group( 'tag_name' )
 
-    if match_object.group( 'start_slash' ):
+    if self.name == '%':
+      self.kind = TagType.SELF_CLOSED
+    elif match_object.group( 'start_slash' ):
       self.kind = TagType.CLOSING
     elif match_object.group( 'end_slash' ):
       self.kind = TagType.SELF_CLOSED
