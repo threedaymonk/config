@@ -125,6 +125,9 @@ irb() {
 bindkey "[Z" reverse-menu-complete
 bindkey "[B" history-beginning-search-forward
 bindkey "[A" history-beginning-search-backward
+bindkey "OZ" reverse-menu-complete
+bindkey "OB" history-beginning-search-forward
+bindkey "OA" history-beginning-search-backward
 
 if [ $DISPLAY ] && bin-exists gnome-keyring-daemon; then
   eval $(gnome-keyring-daemon --daemonize --start)
