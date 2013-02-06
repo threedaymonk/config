@@ -71,6 +71,9 @@ prepend_path() {
   fi
 }
 
+# Heroku toolbelt
+prepend_path "/usr/local/heroku/bin"
+
 # I always want my ~/bin directory
 prepend_path ~/bin
 
