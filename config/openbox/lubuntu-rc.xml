@@ -273,7 +273,6 @@
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
-        <dialog>icons</dialog>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
