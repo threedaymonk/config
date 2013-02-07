@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=xcompmgr
+Comment=Display compositor
+Exec=xcompmgr -cCfF -r4 -l-5 -t-5
+StartupNotify=false
+Terminal=false
+Hidden=true
