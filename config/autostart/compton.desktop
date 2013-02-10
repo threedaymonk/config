@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=xcompmgr
+Name=compton
 Comment=Display compositor
-Exec=xcompmgr -cC -r4 -l-5 -t-5
+Exec=compton -cC -r4 -l-5 -t-5 -G
 StartupNotify=false
 Terminal=false
 Hidden=true
