@@ -452,6 +452,11 @@
         <command>lubuntu-logout</command>
       </action>
     </keybind>
+    <keybind key="W-x">
+      <action name="Execute">
+        <command>/home/paul/bin/monitors</command>
+      </action>
+    </keybind>
     <keybind key="XF86Display">
       <action name="Execute">
         <command>/home/paul/bin/monitors</command>
