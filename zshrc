@@ -100,7 +100,13 @@ precmd() {
   PS1="%F{$fg}%K{$bg} %(3~|[…]/|)%2~ >%b%f%k "
 
   if git branch >& /dev/null; then
-    PS1="%F{black}%K{yellow} $(git branch --no-color | grep '^*' | cut -d ' ' -f 2-) ${PS1}"
+    local branch="$(git branch --no-color | grep '^*' | cut -d ' ' -f 2-)"
+    if [ "$branch" = "master" ]; then
+      local color=green
+    else
+      local color=yellow
+    fi
+    PS1="%F{black}%K{${color}} ${branch} ${PS1}"
   fi
 
   if [ $RBENV_VERSION ]; then
