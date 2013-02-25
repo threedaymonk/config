@@ -56,6 +56,10 @@ alias ll='ls -lah'
 alias vim='vim -p'
 alias private='unset HISTFILE'
 
+if [ $TMUX ]; then
+  alias clear="$(which clear); tmux clear"
+fi
+
 # Disable Ctrl-S, because why would you ever want that?
 stty -ixon
 
