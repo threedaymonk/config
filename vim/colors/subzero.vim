@@ -148,3 +148,6 @@ hi level5c ctermfg=green
 
 " MatchTagAlways
 highlight MatchTag ctermfg=black ctermbg=153
+
+" Clear the gutter
+highlight clear SignColumn
