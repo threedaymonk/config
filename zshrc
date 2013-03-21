@@ -54,6 +54,7 @@ else
 fi
 alias ll='ls -lah'
 alias vim='vim -p'
+alias xless='nohup xless >/dev/null 2>&1 &'
 alias private='unset HISTFILE'
 
 if [ $TMUX ]; then
