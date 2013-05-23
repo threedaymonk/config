@@ -144,7 +144,7 @@ bindkey "OB" history-beginning-search-forward
 bindkey "OA" history-beginning-search-backward
 
 if [ $DISPLAY ] && bin-exists gnome-keyring-daemon; then
-  eval $(gnome-keyring-daemon --daemonize --start)
+  eval $(gnome-keyring-daemon --components=pkcs11,secret,ssh,gpg --daemonize --start)
 fi
 
 if bin-exists xdg-open; then
