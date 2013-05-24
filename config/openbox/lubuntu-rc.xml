@@ -454,7 +454,12 @@
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot</command>
+        <command>scrot /home/paul/Pictures/Screenshot-%F-%T.png</command>
+      </action>
+    </keybind>
+    <keybind key="C-Print">
+      <action name="Execute">
+        <command>scrot -s /home/paul/Pictures/Screenshot-%F-%T.png</command>
       </action>
     </keybind>
     <!-- Launch logout when push on the shutdown button -->
