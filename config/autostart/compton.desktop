@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=compton
+Comment=Display compositor
+Exec=compton --backend glx --vsync opengl-swc --paint-on-overlay --glx-no-stencil --glx-no-rebind-pixmap -c -C
+StartupNotify=false
+Terminal=false
+Hidden=true
