@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Clipit
-Comment=Clipboard manager
-Exec=clipit
-StartupNotify=false
-Terminal=false
-Hidden=false
