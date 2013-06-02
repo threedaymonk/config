@@ -40,7 +40,11 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 export EDITOR='vim'
 export PAGER='less'
 export GREP_OPTIONS='--exclude=\*.svn\*'
-export TERM='xterm-256color'
+if [ $TMUX ]; then
+  export TERM='screen-256color'
+else
+  export TERM='xterm-256color'
+fi
 
 # Set DICT to the British dictionary from 12dicts, if it exists
 if [ -e /opt/12dicts/ ]; then
