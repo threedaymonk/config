@@ -11,6 +11,7 @@ for f in \
   gitignore \
   jshintrc \
   tmux.conf \
+  emacs.d \
   vim \
   vimrc \
   zshenv \
