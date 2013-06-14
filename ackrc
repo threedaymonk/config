@@ -8,6 +8,10 @@ puppet=.pp
 cucumber=.feature
 --type-set
 clojure=.clj
+--type-set
+coffeescript=.coffee
+--type-add
+coffeescript=.eco
 -G
 (?<![\-\.]min\.js)$
 --ignore-dir
