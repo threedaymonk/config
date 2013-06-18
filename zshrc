@@ -60,6 +60,7 @@ alias ll='ls -lah'
 alias vim='vim -p'
 alias xless='nohup xless >/dev/null 2>&1 &'
 alias private='unset HISTFILE'
+alias g=git
 
 if [ $TMUX ]; then
   alias clear="$(which clear); tmux clear"
