@@ -473,6 +473,11 @@
         <command>/home/paul/bin/monitors</command>
       </action>
     </keybind>
+    <keybind key="W-l">
+      <action name="Execute">
+        <command>xflock4</command>
+      </action>
+    </keybind>
     <keybind key="XF86Display">
       <action name="Execute">
         <command>/home/paul/bin/monitors</command>
