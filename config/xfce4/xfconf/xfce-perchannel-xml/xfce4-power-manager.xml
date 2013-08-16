@@ -12,5 +12,6 @@
     <property name="brightness-on-battery" type="uint" value="30"/>
     <property name="dpms-on-battery-sleep" type="uint" value="0"/>
     <property name="dpms-on-battery-off" type="uint" value="2"/>
+    <property name="general-notification" type="bool" value="false"/>
   </property>
 </channel>
