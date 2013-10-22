@@ -170,7 +170,8 @@ autocmd FileType cucumber
   \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:cucumber<CR> %\:<C-R>=line(".")<CR><CR>|
 
 autocmd FileType haskell
-  \ nmap <buffer> <leader>c :w<CR>:!hlint % && ghc -fno-code %<CR>
+  \ nmap <buffer> <leader>c :w<CR>:!hlint % && ghc -fno-code %<CR>|
+  \ nmap <buffer> <leader>r :w<CR>:ToQF runhaskell %<CR>
 
 " Additional filetypes
 autocmd BufNewFile,BufReadPost *.json setl filetype=javascript
