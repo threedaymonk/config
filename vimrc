@@ -237,7 +237,7 @@ inoremap <right> <nop>
 map <leader>pc :w !xsel -i -b<CR>
 nmap <leader>pv :r!xsel -b<CR>
 
-set wildignore+=*/.bundle/*,*/coverage/*
+set wildignore+=*/.bundle/*,*/coverage/*,*.class
 
 let g:mta_use_matchparen_group = 0
 let g:mta_set_default_matchtag_color = 0
