@@ -177,6 +177,7 @@ autocmd FileType haskell
 autocmd BufNewFile,BufReadPost *.json setl filetype=javascript
 autocmd BufNewFile,BufReadPost *.rabl setl filetype=ruby
 autocmd BufNewFile,BufReadPost *_spec.rb setl filetype=rspec syntax=ruby
+autocmd BufNewFile,BufReadPost *.make setl filetype=make syntax=make
 
 " Use hyphens in identifiers in some languages
 autocmd BufNewFile,BufReadPost *.css,*.scss,*.clj,*.scm setl isk+=-
