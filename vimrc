@@ -173,6 +173,9 @@ autocmd FileType haskell
   \ nmap <buffer> <leader>c :w<CR>:!hlint % && ghc -fno-code %<CR>|
   \ nmap <buffer> <leader>r :w<CR>:ToQF runhaskell %<CR>
 
+autocmd FileType javascript
+  \ nmap <buffer> <leader>c :w<CR>:ToQF jshint %<CR>
+
 " Additional filetypes
 autocmd BufNewFile,BufReadPost *.json setl filetype=javascript
 autocmd BufNewFile,BufReadPost *.rabl setl filetype=ruby
