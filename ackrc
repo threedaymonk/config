@@ -12,7 +12,5 @@ clojure=.clj
 coffeescript=.coffee
 --type-add
 coffeescript=.eco
--G
-(?<![\-\.]min\.js)$
 --ignore-dir
 .bundle
