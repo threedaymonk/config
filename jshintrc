@@ -1,7 +1,6 @@
 {
   "curly": true,
   "eqeqeq": true,
-  "es5": true,
   "indent": 2,
   "node": true,
   "quotmark": true,
