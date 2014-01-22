@@ -174,7 +174,8 @@ autocmd FileType haskell
   \ nmap <buffer> <leader>r :w<CR>:ToQF runhaskell %<CR>
 
 autocmd FileType javascript
-  \ nmap <buffer> <leader>c :w<CR>:ToQF jshint %<CR>
+  \ nmap <buffer> <leader>c :w<CR>:ToQF jshint %<CR>|
+  \ setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m
 
 " Additional filetypes
 autocmd BufNewFile,BufReadPost *.json setl filetype=javascript
