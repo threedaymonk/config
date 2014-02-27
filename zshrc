@@ -90,7 +90,11 @@ prepend_path ~/bin
 # Avoid typing bundle exec (in conjunction with binstubs)
 prepend_path "./.bundle/bin"
 
+# Haskell
 prepend_path "/home/paul/.cabal/bin"
+
+# Mono
+prepend_path "/opt/mono/bin"
 
 # Machine-specific settings
 if [ -f ~/.zshrc.local ]; then
