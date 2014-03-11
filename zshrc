@@ -117,6 +117,9 @@ precmd() {
 
   if git branch >& /dev/null; then
     local branch="$(git branch --no-color | grep '^*' | cut -d ' ' -f 2-)"
+    if [ "$branch" = "" ]; then
+      local branch="(no branch)"
+    fi
     if [ "$branch" = "master" ]; then
       local color=green
     else
