@@ -151,3 +151,7 @@ highlight MatchTag ctermfg=black ctermbg=153
 
 " Clear the gutter
 highlight clear SignColumn
+
+" Tabs and trailing spaces
+hi def Tab ctermbg=red
+hi def TrailingWS ctermbg=red

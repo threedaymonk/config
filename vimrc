@@ -42,6 +42,16 @@ set incsearch " Show first match when typing a search
 autocmd FileType make setl noet | setl ts=8 | setl sw=8
 autocmd FileType python setl ts=4 | setl sw=4 " PEP 8
 autocmd BufNewFile,BufReadPost *.tsv setl noet | setl ts=16 | setl sw=16
+autocmd FileType go \ setl noet | setl ts=4 | setl sw=4
+
+" Highlight tabs (if expandtab is set)
+autocmd BufNewFile,BufReadPost *
+  \ if &expandtab |
+  \   syn match Tab "\t" |
+  \ endif
+
+" Highlight whitespace errors
+autocmd BufNewFile,BufReadPost * syn match TrailingWS "\s\+$"
 
 " Mouse support under tmux
 set mouse=a
@@ -102,18 +112,6 @@ augroup JumpCursorOnEdit
 augroup END
 
 let Tlist_Show_One_File = 1
-
-" Highlight whitespace errors
-autocmd BufNewFile,BufReadPost *
-    \ syn match Tab "\t" |
-    \ syn match TrailingWS "\s\+$" |  
-    \ if &background == "dark" |
-    \   hi def Tab ctermbg=red guibg=#220000 |
-    \   hi def TrailingWS ctermbg=red guibg=#220000 |
-    \ else |
-    \   hi def Tab ctermbg=red guibg=#ffdddd |
-    \   hi def TrailingWS ctermbg=red guibg=#ffdddd |
-    \ endif
 
 " Run a shell command in a new window
 command! -complete=file -nargs=+ Shell call s:RunShellCommand(<q-args>)
