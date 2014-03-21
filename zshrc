@@ -91,7 +91,7 @@ prepend_path ~/bin
 prepend_path "./.bundle/bin"
 
 # Haskell
-prepend_path "/home/paul/.cabal/bin"
+prepend_path ~/.cabal/bin
 
 # Mono
 prepend_path "/opt/mono/bin"
