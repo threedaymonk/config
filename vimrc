@@ -206,7 +206,10 @@ autocmd FileType scheme
   \ syn region level2 matchgroup=level2c start=/(/ end=/)/ contains=TOP,level2,level3,level4,level5,NoInParens |
   \ syn region level3 matchgroup=level3c start=/(/ end=/)/ contains=TOP,level3,level4,level5,NoInParens |
   \ syn region level4 matchgroup=level4c start=/(/ end=/)/ contains=TOP,level4,level5,NoInParens |
-  \ syn region level5 matchgroup=level5c start=/(/ end=/)/ contains=TOP,level5,NoInParens |
+  \ syn region level5 matchgroup=level5c start=/(/ end=/)/ contains=TOP,level5,NoInParens
+
+" Autoformat Go files on save
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " ,v will open <C-R>=g:command_output<CR> as a cross-reference window
 nmap <leader>v :cfile <C-R>=g:command_output<CR><CR>:copen<CR>
