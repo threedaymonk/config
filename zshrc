@@ -96,6 +96,10 @@ prepend_path "/home/paul/.cabal/bin"
 # Mono
 prepend_path "/opt/mono/bin"
 
+# Go
+export GOPATH=~/.go
+prepend_path $GOPATH/bin
+
 # Machine-specific settings
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
