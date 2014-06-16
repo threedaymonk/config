@@ -264,7 +264,7 @@
     </keybind>
     <keybind key="W-h">
       <action name="Lower"/>
-      <action name="FocusToBottom"/>
+      <action name="Iconify"/>
       <action name="Unfocus"/>
     </keybind>
     <keybind key="W-b">
