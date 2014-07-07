@@ -107,7 +107,8 @@ fi
 
 # Show stuff in prompt
 precmd() {
-  exit_status=$?
+  local exit_status=$?
+  local separator="%F{black}▕"
 
   if [ $HISTFILE ]; then
     fg=$prompt_fg
@@ -129,7 +130,7 @@ precmd() {
     else
       local color=yellow
     fi
-    PS1="%F{black}%K{${color}} ${branch} ${PS1}"
+    PS1="%F{black}%K{${color}} ${branch}${separator}${PS1}"
   fi
 
   if [ $RBENV_VERSION ]; then
@@ -137,7 +138,7 @@ precmd() {
   fi
 
   if test $exit_status -ne 0; then
-    PS1="%F{white}%K{red} ${exit_status} ${PS1}"
+    PS1="%F{white}%K{red} ${exit_status}${separator}${PS1}"
   fi
 }
 
