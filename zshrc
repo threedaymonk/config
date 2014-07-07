@@ -63,7 +63,7 @@ alias private='unset HISTFILE'
 alias g=git
 
 if [ $TMUX ]; then
-  alias clear="$(which clear); tmux clear"
+  alias clear="$(/usr/bin/which clear); tmux clear"
 fi
 
 # Disable Ctrl-S, because why would you ever want that?
