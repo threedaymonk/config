@@ -1,0 +1,8 @@
+#!/bin/bash
+inum=0
+for window in $(tmux list-windows | cut -d: -f1); do
+  if [ $window -gt $inum ]; then
+    tmux move-window -d -s $window -t $inum
+  fi
+  inum=$(($inum + 1))
+done
