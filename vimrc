@@ -184,6 +184,9 @@ autocmd BufNewFile,BufReadPost *.make setl filetype=make syntax=make
 " Use hyphens in identifiers in some languages
 autocmd BufNewFile,BufReadPost *.css,*.scss,*.clj,*.scm setl isk+=-
 
+" Use question and exclamation marks in identifiers in Ruby
+autocmd FileType ruby setl isk+=\?,!
+
 " Rainbow parens in Clojure
 let g:vimclojure#ParenRainbow = 1
 let g:vimclojure#ParenRainbowColorsDark = {
