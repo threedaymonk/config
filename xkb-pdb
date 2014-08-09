@@ -1,9 +1,9 @@
-// Copy to /usr/share/X11/xkb/symbols/xx
-// Load with setxkbmap xx
+// Copy to /usr/share/X11/xkb/symbols/pdb/us
+// Load with setxkbmap us pdb
 
 partial alphanumeric_keys
-xkb_symbols "basic" {
-  name[Group1]= "USA - International (threedaymonk)";
+xkb_symbols "pdb" {
+  name[Group1]= "USA - International (pdb)";
 
   include "us(altgr-intl)"
 
@@ -27,6 +27,7 @@ xkb_symbols "basic" {
 
   include "level3(ralt_switch)"
   include "ctrl(nocaps)"
-  include "compose(rctrl)"
-  include "compose(rwin)"
+
+  // Use App/Menu key for compose
+  key <MENU> { type[Group1]="TWO_LEVEL", [ Multi_key, Multi_key ] };
 };
