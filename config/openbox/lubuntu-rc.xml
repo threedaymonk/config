@@ -406,6 +406,32 @@
         <command>amixer -q sset Master toggle</command>
       </action>
     </keybind>
+    <!-- Media keys -->
+    <keybind key="W-p">
+     <action name="Execute">
+       <command>/home/paul/bin/spotify-remote playpause</command>
+     </action>
+    </keybind>
+    <keybind key="XF86AudioPlay">
+     <action name="Execute">
+       <command>/home/paul/bin/spotify-remote playpause</command>
+     </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+     <action name="Execute">
+       <command>/home/paul/bin/spotify-remote prev</command>
+     </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+     <action name="Execute">
+       <command>/home/paul/bin/spotify-remote next</command>
+     </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+     <action name="Execute">
+       <command>/home/paul/bin/spotify-remote stop</command>
+     </action>
+    </keybind>
     <!-- Keybinding for terminal button-->
     <keybind key="XF86WWW">
       <action name="Execute">
