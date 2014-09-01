@@ -73,12 +73,10 @@ stty -ixon
 prompt_fg=black
 prompt_bg=green
 
-# Add directory to PATH if it is not already there.
+# Add or move directory to the front of PATH
 prepend_path() {
-  to_add=$1
-  if ( ! echo ":$PATH:" | grep -qF ":$to_add:" ); then
-    export PATH=$to_add:$PATH
-  fi
+  local to_add=$1
+  export PATH=$to_add$( echo ":$PATH:" | sed 's!:$to_add:!:!' | sed 's!:$!!' )
 }
 
 # Heroku toolbelt
@@ -134,7 +132,7 @@ precmd() {
   fi
 
   if [ $RBENV_VERSION ]; then
-    PS1="%F{black}%K{white} ${RBENV_VERSION} ${PS1}"
+    PS1="%F{black}%K{white} ${RBENV_VERSION}${separator}${PS1}"
   fi
 
   if test $exit_status -ne 0; then
@@ -175,7 +173,9 @@ fi
 alias csi="rlwrap csi"
 
 rbenv-init() {
-  export PATH="$HOME/.rbenv/bin:$PATH"
+  prepend_path $HOME/.rbenv/bin
+  # Bundle directory needs to be first for e.g. rake to work reliably
+  prepend_path "./.bundle/bin"
   unalias rbenv
   alias bundle="rbenv exec bundle"
   eval "$(rbenv init -)"
