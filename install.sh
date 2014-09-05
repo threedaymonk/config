@@ -7,11 +7,12 @@ for f in \
   Xresources \
   ackrc \
   ctags \
+  emacs.d \
   fonts.conf \
   gitignore \
   jshintrc \
+  rspec \
   tmux.conf \
-  emacs.d \
   vim \
   vimrc \
   zshenv \
