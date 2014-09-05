@@ -80,12 +80,3 @@ Plugin {
     }
 }
 
-Plugin {
-    type = launchbar
-    Config {
-        Button {
-            id=lubuntu-logout.desktop
-        }
-    }
-}
-
