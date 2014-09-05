@@ -85,9 +85,6 @@ prepend_path "/usr/local/heroku/bin"
 # I always want my ~/bin directory
 prepend_path ~/bin
 
-# Avoid typing bundle exec (in conjunction with binstubs)
-prepend_path "./.bundle/bin"
-
 # Haskell
 prepend_path ~/.cabal/bin
 
@@ -172,13 +169,9 @@ fi
 
 alias csi="rlwrap csi"
 
-rbenv-init() {
-  prepend_path $HOME/.rbenv/bin
-  # Bundle directory needs to be first for e.g. rake to work reliably
-  prepend_path "./.bundle/bin"
-  unalias rbenv
-  alias bundle="rbenv exec bundle"
-  eval "$(rbenv init -)"
-  rbenv "$@"
-}
-alias rbenv=rbenv-init
+prepend_path $HOME/.rbenv/bin
+eval "$(rbenv init -)"
+
+# Avoid typing bundle exec (in conjunction with binstubs)
+# Bundle directory needs to be first for e.g. rake to work reliably
+prepend_path "./.bundle/bin"
