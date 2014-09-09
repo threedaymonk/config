@@ -28,3 +28,5 @@
   excludesfile = TODO/.gitignore
 [push]
   default = current
+[diff]
+  algorithm = patience
