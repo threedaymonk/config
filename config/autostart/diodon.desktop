@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Diodon
+Comment=Clipboard Manager
+Icon=diodon
+Exec=diodon
+Terminal=false
+Type=Application
