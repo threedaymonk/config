@@ -7,3 +7,4 @@ config/xfce4/xfconf/xfce-perchannel-xml/displays.xml
 config/xfce4/xfconf/xfce-perchannel-xml/ristretto.xml
 config/xfce4/xfce4-screenshooter
 config/roxterm.sourceforge.net/Searches
+emacs.d/url/cookies
