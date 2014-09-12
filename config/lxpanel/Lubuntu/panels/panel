@@ -19,7 +19,7 @@ Global {
     fontsize=10
     fontcolor=#000000
     usefontsize=0
-    background=1
+    background=0
     backgroundfile=/usr/share/lxpanel/images/lubuntu-background.png
     iconsize=24
     loglevel=2
