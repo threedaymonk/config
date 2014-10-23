@@ -471,21 +471,21 @@
         <command>xbacklight -inc 10</command>
       </action>
     </keybind>
-    <!-- Launch scrot when Print is pressed -->
+    <!-- Launch maim when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot /home/paul/Pictures/Screenshot-%F-%T.png</command>
+        <command>sh -c 'maim /home/paul/Pictures/Screenshot-$(date -u +%FT%TZ).png'</command>
       </action>
     </keybind>
     <keybind key="C-Print">
       <action name="Execute">
-        <command>scrot -s /home/paul/Pictures/Screenshot-%F-%T.png</command>
+        <command>sh -c 'maim --hidecursor -s /home/paul/Pictures/Screenshot-$(date -u +%FT%TZ).png'</command>
       </action>
     </keybind>
     <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
-        <command>scrot -u -b /home/paul/Pictures/Screenshot-%F-%T.png</command>
+        <command>sh -c 'scrot -u -b /home/paul/Pictures/Screenshot-$(date -u +%FT%TZ).png'</command>
       </action>
     </keybind>
     <!-- Launch logout when push on the shutdown button -->
