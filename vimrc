@@ -43,6 +43,7 @@ autocmd FileType make setl noet | setl ts=8 | setl sw=8
 autocmd FileType python setl ts=4 | setl sw=4 " PEP 8
 autocmd BufNewFile,BufReadPost *.tsv setl noet | setl ts=16 | setl sw=16
 autocmd FileType go setl noet | setl ts=4 | setl sw=4
+autocmd BufNewFile,BufReadPost *.text.erb setl tw=72 " Wrap emails at 72 cols
 
 " Highlight tabs (if expandtab is set)
 autocmd BufNewFile,BufReadPost *
