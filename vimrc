@@ -176,6 +176,9 @@ autocmd FileType javascript
   \ nmap <buffer> <leader>c :w<CR>:ToQF jshint %<CR>|
   \ setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m
 
+autocmd FileType sh
+  \ nmap <buffer> <leader>c :w<CR>:ToQF shellcheck %<CR>
+
 " Additional filetypes
 autocmd BufNewFile,BufReadPost *.json setl filetype=javascript
 autocmd BufNewFile,BufReadPost *.rabl setl filetype=ruby
