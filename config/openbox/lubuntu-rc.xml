@@ -408,29 +408,29 @@
     </keybind>
     <!-- Media keys -->
     <keybind key="W-p">
-     <action name="Execute">
-       <command>/home/paul/bin/spotify-remote playpause</command>
-     </action>
+      <action name="Execute">
+        <command>/home/paul/bin/mpris-remote playpause</command>
+      </action>
     </keybind>
     <keybind key="XF86AudioPlay">
-     <action name="Execute">
-       <command>/home/paul/bin/spotify-remote playpause</command>
-     </action>
+      <action name="Execute">
+        <command>/home/paul/bin/mpris-remote playpause</command>
+      </action>
     </keybind>
     <keybind key="XF86AudioPrev">
-     <action name="Execute">
-       <command>/home/paul/bin/spotify-remote prev</command>
-     </action>
+      <action name="Execute">
+        <command>/home/paul/bin/mpris-remote prev</command>
+      </action>
     </keybind>
     <keybind key="XF86AudioNext">
-     <action name="Execute">
-       <command>/home/paul/bin/spotify-remote next</command>
-     </action>
+      <action name="Execute">
+        <command>/home/paul/bin/mpris-remote next</command>
+      </action>
     </keybind>
     <keybind key="XF86AudioStop">
-     <action name="Execute">
-       <command>/home/paul/bin/spotify-remote stop</command>
-     </action>
+      <action name="Execute">
+        <command>/home/paul/bin/mpris-remote stop</command>
+      </action>
     </keybind>
     <!-- Keybinding for terminal button-->
     <keybind key="XF86WWW">
