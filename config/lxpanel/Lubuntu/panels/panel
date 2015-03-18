@@ -9,13 +9,13 @@ Global {
     width=100
     height=24
     transparent=0
-    tintcolor=#000000
-    alpha=0
+    tintcolor=#333333
+    alpha=255
     autohide=0
     heightwhenhidden=2
     setdocktype=1
     setpartialstrut=1
-    usefontcolor=1
+    usefontcolor=0
     fontsize=10
     fontcolor=#000000
     usefontsize=0
