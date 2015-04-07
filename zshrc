@@ -163,10 +163,6 @@ if [ $DISPLAY ] && bin-exists gnome-keyring-daemon; then
            sed 's/^/export /')
 fi
 
-if bin-exists xdg-open; then
-  alias open=xdg-open
-fi
-
 alias csi="rlwrap csi"
 
 prepend_path $HOME/.rbenv/bin
