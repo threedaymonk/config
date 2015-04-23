@@ -158,6 +158,7 @@ bindkey "OB" history-beginning-search-forward
 bindkey "OA" history-beginning-search-backward
 
 if [ $DISPLAY ] && bin-exists gnome-keyring-daemon; then
+  unset GNOME_KEYRING_CONTROL
   eval $(gnome-keyring-daemon --components=pkcs11,secret,ssh,gpg \
            --daemonize --start | \
            sed 's/^/export /')
