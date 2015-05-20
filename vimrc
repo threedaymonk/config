@@ -138,6 +138,16 @@ function! Ack(args)
 endfunction
 command! -nargs=* -complete=file Ack call Ack(<q-args>)
 
+" Search with git grep
+function! GG(args)
+  let grepprg_bak=&grepprg
+  set grepprg=git\ grep\ --no-color\ --line-number
+  execute "silent! grep " . a:args
+  botright copen
+  let &grepprg=grepprg_bak
+endfunction
+command! -nargs=* -complete=file GG call GG(<q-args>)
+
 " Run a shell command and put its output in a quickfix buffer
 let g:command_output=".quickfix.tmp"
 function! s:RunShellCommandToQuickfix(cmdline)
