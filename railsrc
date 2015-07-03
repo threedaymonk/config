@@ -1,0 +1,6 @@
+--ruby='/usr/bin/env ruby'
+--database=postgresql
+--skip-spring
+--skip-javascript
+--skip-turbolinks
+--skip-test-unit
