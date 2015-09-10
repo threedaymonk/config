@@ -116,7 +116,7 @@ precmd() {
   PS1="%F{$fg}%K{$bg} %(3~|[…]/|)%2~ >%b%f%k "
 
   if git branch >& /dev/null; then
-    local branch="$(git branch --no-color | grep '^*' | cut -d ' ' -f 2-)"
+    local branch="$(git rev-parse --abbrev-ref HEAD)"
     if [ "$branch" = "" ]; then
       local branch="(no branch)"
     fi
