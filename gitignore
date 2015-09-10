@@ -2,6 +2,7 @@
 .*.swo
 .swp
 .bundle
+.bundle-*
 .*.tmp
 /todo.txt
 *~
