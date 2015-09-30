@@ -14,6 +14,7 @@
   p = push
   d = diff
   wc = whatchanged
+  fixup = commit --fixup
 [apply]
   whitespace = fix
 [user]
@@ -30,3 +31,7 @@
   default = current
 [diff]
   algorithm = patience
+[branch]
+  autosetupmerge = true
+[rebase]
+  autoSquash = true
