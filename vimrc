@@ -262,6 +262,14 @@ nmap <leader>pv :r!xsel -b<CR>
 
 set wildignore+=*/.bundle/*,*/coverage/*,*.class
 
+let g:ctrlp_user_command = {
+	\ 'types': {
+		\ 1: ['.git', 'cd %s && git ls-files'],
+		\ 2: ['.hg', 'hg --cwd %s locate -I .'],
+		\ },
+	\ 'fallback': 'find %s -type f'
+	\ }
+
 let g:mta_use_matchparen_group = 0
 let g:mta_set_default_matchtag_color = 0
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'eruby' : 1 }
