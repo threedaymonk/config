@@ -177,6 +177,7 @@ let g:cucumber="cucumber -r features --color"
 autocmd FileType cucumber
   \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:cucumber<CR> %<CR>|
   \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:cucumber<CR> %\:<C-R>=line(".")<CR><CR>|
+set errorformat+=cucumber\ %f:%l\ %m
 
 autocmd FileType haskell
   \ nmap <buffer> <leader>c :w<CR>:!hlint % && ghc -fno-code %<CR>|
