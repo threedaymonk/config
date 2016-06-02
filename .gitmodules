@@ -4,3 +4,6 @@
 [submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
 	url = git@github.com:hallison/vim-markdown.git
+[submodule "vim/bundle/rename2"]
+	path = vim/bundle/rename2
+	url = git@github.com:ReekenX/vim-rename2.git
