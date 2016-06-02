@@ -25,3 +25,6 @@
 [submodule "vim/bundle/gitgutter"]
 	path = vim/bundle/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "vim/bundle/go"]
+	path = vim/bundle/go
+	url = git@github.com:fatih/vim-go.git
