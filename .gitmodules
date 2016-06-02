@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vimclojure"]
 	path = vim/bundle/vimclojure
 	url = git@github.com:vim-scripts/VimClojure.git
+[submodule "vim/bundle/gitgutter"]
+	path = vim/bundle/gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
