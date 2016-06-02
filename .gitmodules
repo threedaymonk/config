@@ -31,3 +31,6 @@
 [submodule "vim/bundle/elixir"]
 	path = vim/bundle/elixir
 	url = git@github.com:elixir-lang/vim-elixir.git
+[submodule "vim/bundle/editorconfig"]
+	path = vim/bundle/editorconfig
+	url = git@github.com:editorconfig/editorconfig-vim.git
