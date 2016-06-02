@@ -10,3 +10,6 @@
 [submodule "vim/bundle/abolish"]
 	path = vim/bundle/abolish
 	url = git@github.com:tpope/vim-abolish.git
+[submodule "vim/bundle/ruby"]
+	path = vim/bundle/ruby
+	url = git@github.com:vim-ruby/vim-ruby.git
