@@ -31,6 +31,7 @@
   default = current
 [diff]
   algorithm = patience
+  compactionHeuristic = true
 [branch]
   autosetupmerge = true
 [rebase]
