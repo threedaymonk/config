@@ -42,3 +42,5 @@
   diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 [interactive]
   diffFilter = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight
+[url "git@github.com:"]
+  pushInsteadOf = "https://github.com/"
