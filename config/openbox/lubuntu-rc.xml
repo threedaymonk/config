@@ -496,7 +496,7 @@
     </keybind>
     <keybind key="W-x">
       <action name="Execute">
-        <command>/home/paul/bin/monitors</command>
+        <command>/user/local/bin/lerna</command>
       </action>
     </keybind>
     <keybind key="W-l">
