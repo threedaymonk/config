@@ -39,7 +39,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # Various defaults
 export EDITOR='vim'
 export PAGER='less'
-export GREP_OPTIONS='--exclude=\*.svn\*'
 if [ $TMUX ]; then
   export TERM='screen-256color'
 else
