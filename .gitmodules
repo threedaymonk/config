@@ -34,3 +34,6 @@
 [submodule "vim/bundle/editorconfig"]
 	path = vim/bundle/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
+[submodule "vim/bundle/apiblueprint"]
+	path = vim/bundle/apiblueprint
+	url = https://github.com/kylef/apiblueprint.vim.git
