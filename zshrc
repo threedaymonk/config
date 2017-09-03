@@ -94,11 +94,6 @@ prepend_path "/opt/mono/bin"
 export GOPATH=~/.go
 prepend_path $GOPATH/bin
 
-# Machine-specific settings
-if [ -f ~/.zshrc.local ]; then
-  source ~/.zshrc.local
-fi
-
 # Show stuff in prompt
 precmd() {
   local exit_status=$?
@@ -171,3 +166,8 @@ eval "$(rbenv init -)"
 # Avoid typing bundle exec (in conjunction with binstubs)
 # Bundle directory needs to be first for e.g. rake to work reliably
 prepend_path "./.bundle/bin"
+
+# Machine-specific settings
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
