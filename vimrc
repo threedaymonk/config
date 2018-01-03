@@ -48,7 +48,6 @@ autocmd BufNewFile,BufReadPost * syn match TrailingWS "\s\+$"
 
 " Mouse support under tmux
 set mouse=a
-set ttymouse=xterm
 
 " For use on a dark terminal
 set background=dark
