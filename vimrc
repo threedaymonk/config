@@ -142,7 +142,8 @@ command! -nargs=* -complete=file GG call GG(<q-args>)
 " Run a shell command and put its output in a quickfix buffer
 let g:command_output=".quickfix.tmp"
 function! s:RunShellCommandToQuickfix(cmdline)
-  execute '!'.a:cmdline.' | ansitee -s '.g:command_output
+  -tabedit %
+  execute 'terminal '.a:cmdline.' | ansitee -s '.g:command_output
 endfunction
 command! -nargs=+ -complete=command ToQF call s:RunShellCommandToQuickfix(<q-args>)
 
