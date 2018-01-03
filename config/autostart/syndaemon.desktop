@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=syndaemon
-Comment=Inhibit trackpad when typing
-Exec=syndaemon -K -i 1
-StartupNotify=false
-Terminal=false
-Hidden=false
