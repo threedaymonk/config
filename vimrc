@@ -6,14 +6,6 @@ filetype plugin indent on
 let $PATH = system("printenv PATH")
 let $PATH = substitute($PATH, "\<C-J>$", "", "")
 
-" If running in a terminal window, set the terminal type to allow syntax
-" highlighting. Otherwise, change directory on startup.
-if !has("gui_running")
-  set term=ansi
-else
-  autocmd VimEnter * if getcwd()=="/" | if strlen(@%) | cd %:p:h | else | cd | endif | endif
-endif
-
 " General defaults
 set nocompatible
 filetype on
