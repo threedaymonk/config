@@ -44,6 +44,7 @@ if [ $TMUX ]; then
 else
   export TERM='xterm-256color'
 fi
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # Set DICT to the British dictionary from 12dicts, if it exists
 if [ -e /opt/12dicts/ ]; then
