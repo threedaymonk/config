@@ -37,3 +37,6 @@
 [submodule "vim/bundle/apiblueprint"]
 	path = vim/bundle/apiblueprint
 	url = https://github.com/kylef/apiblueprint.vim.git
+[submodule "vim/bundle/openscad"]
+	path = vim/bundle/openscad
+	url = https://github.com/sirtaj/vim-openscad.git
