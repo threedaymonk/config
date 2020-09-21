@@ -40,6 +40,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 export EDITOR='vim'
 export PAGER='less'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+if [ $VSCODE_GIT_IPC_HANDLE ]; then
+  export GIT_EDITOR='code -w'
+fi
 
 # Set DICT to the British dictionary from 12dicts, if it exists
 if [ -e /opt/12dicts/ ]; then
