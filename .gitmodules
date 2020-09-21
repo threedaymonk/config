@@ -40,3 +40,6 @@
 [submodule "vim/bundle/openscad"]
 	path = vim/bundle/openscad
 	url = https://github.com/sirtaj/vim-openscad.git
+[submodule "vim/bundle/nuuid"]
+	path = vim/bundle/nuuid
+	url = https://github.com/kburdett/vim-nuuid

@@ -8,3 +8,7 @@
 *~
 /tags
 /.idea
+/routes.txt
+.env.local
+.vscode
+*.code-workspace
