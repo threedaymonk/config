@@ -163,6 +163,14 @@ alias csi="rlwrap csi"
 # Bundle directory needs to be first for e.g. rake to work reliably
 prepend_path "./.bundle/bin"
 
+if [ -f ~/.asdf/asdf.sh ]; then
+  source ~/.asdf/asdf.sh
+  # append completions to fpath
+  fpath=(${ASDF_DIR}/completions $fpath)
+  # initialise completions with ZSH's compinit
+  autoload -Uz compinit && compinit
+fi
+
 # Machine-specific settings
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
