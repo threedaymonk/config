@@ -159,9 +159,6 @@ fi
 
 alias csi="rlwrap csi"
 
-prepend_path $HOME/.rbenv/bin
-eval "$(rbenv init -)"
-
 # Avoid typing bundle exec (in conjunction with binstubs)
 # Bundle directory needs to be first for e.g. rake to work reliably
 prepend_path "./.bundle/bin"
