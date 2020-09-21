@@ -113,7 +113,7 @@ precmd() {
     if [ "$branch" = "" ]; then
       local branch="(no branch)"
     fi
-    if [ "$branch" = "master" ]; then
+    if [[ "$branch" = "master" || "$branch" = "main" ]]; then
       local color=green
     else
       local color=yellow
