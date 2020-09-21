@@ -96,7 +96,7 @@ prepend_path $GOPATH/bin
 # Show stuff in prompt
 precmd() {
   local exit_status=$?
-  local separator="%F{black}▕"
+  local separator="%F{$prompt_bg}▕"
 
   if [ $HISTFILE ]; then
     fg=$prompt_fg
