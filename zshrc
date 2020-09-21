@@ -39,11 +39,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # Various defaults
 export EDITOR='vim'
 export PAGER='less'
-if [ $TMUX ]; then
-  export TERM='screen-256color'
-else
-  export TERM='xterm-256color'
-fi
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # Set DICT to the British dictionary from 12dicts, if it exists
