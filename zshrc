@@ -159,10 +159,6 @@ fi
 
 alias csi="rlwrap csi"
 
-# Avoid typing bundle exec (in conjunction with binstubs)
-# Bundle directory needs to be first for e.g. rake to work reliably
-prepend_path "./.bundle/bin"
-
 if [ -f ~/.asdf/asdf.sh ]; then
   source ~/.asdf/asdf.sh
   # append completions to fpath
@@ -170,6 +166,10 @@ if [ -f ~/.asdf/asdf.sh ]; then
   # initialise completions with ZSH's compinit
   autoload -Uz compinit && compinit
 fi
+
+# Avoid typing bundle exec (in conjunction with binstubs)
+# Bundle directory needs to be first for e.g. rake to work reliably
+prepend_path "./.bundle/bin"
 
 # Machine-specific settings
 if [ -f ~/.zshrc.local ]; then
