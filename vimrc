@@ -1,7 +1,6 @@
 " Use Plug to load bundles
 " See https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
-
 Plug 'tpope/vim-abolish'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-cucumber'
@@ -17,6 +16,8 @@ Plug 'vim-scripts/VimClojure'
 Plug 'sirtaj/vim-openscad'
 Plug 'sersorrel/vim-lilypond'
 Plug 'kburdett/vim-nuuid'
+Plug 'tidalcycles/vim-tidal'
+call plug#end()
 
 " Get a good value for $PATH.
 let $PATH = system("printenv PATH")
@@ -25,6 +26,7 @@ let $PATH = substitute($PATH, "\<C-J>$", "", "")
 " General defaults
 set nocompatible
 filetype on
+filetype plugin on
 syntax on " Syntax highlighting
 set ai " Auto-indent
 set et " Expand tabs to spaces
@@ -276,3 +278,6 @@ let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'eruby' : 1 }
 set undodir=~/.cache/vim/
 set backupdir=~/.cache/vim/
 set directory=~/.cache/vim/
+
+" Use neovim terminal for TidalCycles
+let g:tidal_target = "terminal"
