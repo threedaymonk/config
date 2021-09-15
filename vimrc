@@ -1,6 +1,20 @@
-" Use Pathogen to load bundles from ~/.vim/bundle
-call pathogen#infect()
-filetype plugin indent on
+" Use Plug to load bundles
+" See https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-abolish'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-cucumber'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'gitgutter/Vim'
+Plug 'fatih/vim-go'
+Plug 'hallison/vim-markdown'
+Plug 'ReekenX/vim-rename2'
+Plug 'vim-ruby/vim-ruby'
+Plug 'nanki/treetop.vim'
+Plug 'vim-scripts/VimClojure'
+Plug 'sirtaj/vim-openscad'
 
 " Get a good value for $PATH.
 let $PATH = system("printenv PATH")
