@@ -167,6 +167,8 @@ if [ -f ~/.asdf/asdf.sh ]; then
   autoload -Uz compinit && compinit
 fi
 
+prepend_path "$HOME/.local/bin"
+
 # Avoid typing bundle exec (in conjunction with binstubs)
 # Bundle directory needs to be first for e.g. rake to work reliably
 prepend_path "./.bundle/bin"
