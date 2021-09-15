@@ -44,3 +44,5 @@
   diffFilter = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight
 [url "git@github.com:"]
   pushInsteadOf = "https://github.com/"
+[init]
+  defaultBranch = main
