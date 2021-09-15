@@ -255,16 +255,6 @@ function! SourceVimLocal()
 endfunction
 call SourceVimLocal()
 
-" Wean myself off arrow keys!
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
 " X11 copy/paste integration
 map <leader>pc :w !xsel -i -b<CR>
 nmap <leader>pv :r!xsel -b<CR>
