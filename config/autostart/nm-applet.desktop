@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Network Manager
-Comment=Network Manager applet
-Exec=nm-applet
-StartupNotify=false
-Terminal=false
-Hidden=false
