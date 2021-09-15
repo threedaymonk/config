@@ -63,10 +63,10 @@ autocmd BufNewFile,BufReadPost * syn match TrailingWS "\s\+$"
 " Mouse support under tmux
 set mouse=a
 
+set t_Co=256
+
 " For use on a dark terminal
 set background=dark
-set t_Co=256
-colorscheme subzero
 
 runtime! indent.vim
 runtime! macros/matchit.vim " Use % to match if/end etc.
