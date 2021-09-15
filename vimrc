@@ -15,6 +15,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'nanki/treetop.vim'
 Plug 'vim-scripts/VimClojure'
 Plug 'sirtaj/vim-openscad'
+Plug 'sersorrel/vim-lilypond'
 
 " Get a good value for $PATH.
 let $PATH = system("printenv PATH")
