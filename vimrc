@@ -17,6 +17,7 @@ Plug 'sirtaj/vim-openscad'
 Plug 'sersorrel/vim-lilypond'
 Plug 'kburdett/vim-nuuid'
 Plug 'tidalcycles/vim-tidal'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 " Get a good value for $PATH.
@@ -93,6 +94,11 @@ let maplocalleader = ","
 " Use ^N for :cnext
 :nmap <C-N> :cnext<CR>
 :map  <C-N> :cnext<CR>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Remember where the cursor was last time we edited this file, and jump there
 " on opening
