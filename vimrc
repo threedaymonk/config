@@ -249,15 +249,6 @@ nmap <leader>a :tabe<CR>:Ack
 " No more bell!
 autocmd VimEnter * set vb t_vb=
 
-" If there's a local .vimrc file, use it
-" Avoid infinite recursion by skipping this if we're in $HOME
-function! SourceVimLocal()
-  if filereadable(".vimrc") && (expand($HOME) != getcwd())
-    source .vimrc
-  endif
-endfunction
-call SourceVimLocal()
-
 " X11 copy/paste integration
 map <leader>pc :w !xsel -i -b<CR>
 nmap <leader>pv :r!xsel -b<CR>
@@ -282,3 +273,12 @@ set directory=~/.cache/vim/
 
 " Use neovim terminal for TidalCycles
 let g:tidal_target = "terminal"
+
+" If there's a local .vimrc file, use it
+" Avoid infinite recursion by skipping this if we're in $HOME
+function! SourceVimLocal()
+  if filereadable(".vimrc") && (expand($HOME) != getcwd())
+    source .vimrc
+  endif
+endfunction
+call SourceVimLocal()
