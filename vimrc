@@ -18,6 +18,7 @@ Plug 'sersorrel/vim-lilypond'
 Plug 'kburdett/vim-nuuid'
 Plug 'tidalcycles/vim-tidal'
 Plug 'junegunn/vim-easy-align'
+Plug 'vim-test/vim-test'
 call plug#end()
 
 " Get a good value for $PATH.
@@ -171,30 +172,8 @@ function! s:RunShellCommandToQuickfix(cmdline)
 endfunction
 command! -nargs=+ -complete=command ToQF call s:RunShellCommandToQuickfix(<q-args>)
 
-" Various useful Ruby command mode shortcuts
-" focused-test can be found at http://github.com/btakita/focused-test
-let g:ruby="ruby -Itest"
-let g:testrbl="testrbl -Itest"
 autocmd FileType ruby
-  \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:ruby<CR> %<CR>|
-  \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:testrbl<CR> %\:<C-R>=line(".")<CR><CR>|
-  \ nmap <buffer> <leader>c :w<CR>:ToQF <C-R>=g:ruby<CR> -c %<CR>
-
-let g:rspec="rspec --color --tty"
-autocmd FileType rspec
-  \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:rspec<CR> %<CR>|
-  \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:rspec<CR> %\:<C-R>=line(".")<CR><CR>|
-  \ setlocal errorformat=rspec\ %f:%l\ #\ %m
-
-let g:cucumber="cucumber -r features --color"
-autocmd FileType cucumber
-  \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:cucumber<CR> %<CR>|
-  \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:cucumber<CR> %\:<C-R>=line(".")<CR><CR>|
-set errorformat+=cucumber\ %f:%l\ %m
-
-autocmd FileType haskell
-  \ nmap <buffer> <leader>c :w<CR>:!hlint % && ghc -fno-code %<CR>|
-  \ nmap <buffer> <leader>r :w<CR>:ToQF runhaskell %<CR>
+  \ nmap <buffer> <leader>c :w<CR>:ToQF ruby -c %<CR>
 
 autocmd FileType javascript
   \ nmap <buffer> <leader>c :w<CR>:ToQF jshint %<CR>|
@@ -202,6 +181,11 @@ autocmd FileType javascript
 
 autocmd FileType sh
   \ nmap <buffer> <leader>c :w<CR>:ToQF shellcheck %<CR>
+
+" vim-test
+let test#strategy = "neovim"
+nmap <silent> <leader>T :TestNearest<CR>
+nmap <silent> <leader>t :TestFile<CR>
 
 " Additional filetypes
 autocmd BufNewFile,BufReadPost *.json setl filetype=javascript
