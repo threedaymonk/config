@@ -12,3 +12,5 @@
 .env.local
 .vscode
 *.code-workspace
+.vimrc
+Session.vim
