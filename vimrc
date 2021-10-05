@@ -174,8 +174,10 @@ command! -nargs=+ -complete=command ToQF call s:RunShellCommandToQuickfix(<q-arg
 " Various useful Ruby command mode shortcuts
 " focused-test can be found at http://github.com/btakita/focused-test
 let g:ruby="ruby -Itest"
+let g:testrbl="testrbl -Itest"
 autocmd FileType ruby
   \ nmap <buffer> <leader>r :w<CR>:ToQF <C-R>=g:ruby<CR> %<CR>|
+  \ nmap <buffer> <leader>R :w<CR>:ToQF <C-R>=g:testrbl<CR> %\:<C-R>=line(".")<CR><CR>|
   \ nmap <buffer> <leader>c :w<CR>:ToQF <C-R>=g:ruby<CR> -c %<CR>
 
 let g:rspec="rspec --color --tty"
