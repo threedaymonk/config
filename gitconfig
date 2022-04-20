@@ -7,9 +7,9 @@
   dc = diff --cached
   ch = cherry-pick
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  pom = !git pull origin "$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@refs/remotes/origin/@@' 2>/dev/null)"
+  pom = !git pull origin "$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@refs/remotes/origin/@@')"
   rb = rebase
-  rbom = !git rebase "$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@refs/remotes/@@' 2>/dev/null)"
+  rbom = !git rebase "$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@refs/remotes/@@')"
   f = fetch
   p = push
   d = diff
