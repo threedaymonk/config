@@ -17,9 +17,6 @@
   fixup = commit --fixup
 [apply]
   whitespace = fix
-[user]
-  name = TODO
-  email = TODO
 [color]
   branch = auto
   diff = auto
@@ -46,3 +43,5 @@
   pushInsteadOf = "https://github.com/"
 [init]
   defaultBranch = main
+[include]
+  path = ~/.gitconfig.local

@@ -9,6 +9,7 @@ for f in \
   ctags \
   emacs.d \
   fonts.conf \
+  gitconfig \
   gitignore \
   jshintrc \
   rspec \
