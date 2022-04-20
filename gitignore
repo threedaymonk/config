@@ -14,3 +14,4 @@
 *.code-workspace
 .vimrc
 Session.vim
+Procfile.local
