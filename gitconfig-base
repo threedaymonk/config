@@ -26,7 +26,7 @@
   interactive = auto
   status = auto
 [core]
-  excludesfile = TODO/.gitignore
+  excludesfile = ~/.gitignore
 [push]
   default = current
 [diff]
