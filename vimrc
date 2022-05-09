@@ -184,6 +184,8 @@ autocmd FileType sh
 
 " vim-test
 let test#strategy = "neovim"
+" Use normal terminal window that doesn't disappear on a keypress
+let g:test#neovim#start_normal = 1
 nmap <silent> <leader>T :TestNearest<CR>
 nmap <silent> <leader>t :TestFile<CR>
 
