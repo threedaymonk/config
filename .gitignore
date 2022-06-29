@@ -9,3 +9,4 @@ config/xfce4/xfce4-screenshooter
 config/roxterm.sourceforge.net/Searches
 emacs.d/url/cookies
 vim/plugged
+vim/autoload/plug.vim.old
