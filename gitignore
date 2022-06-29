@@ -7,6 +7,7 @@
 /todo.txt
 *~
 /tags
+/tags.*
 /.idea
 /routes.txt
 .env.local
