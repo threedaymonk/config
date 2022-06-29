@@ -19,6 +19,7 @@ Plug 'kburdett/vim-nuuid'
 Plug 'tidalcycles/vim-tidal'
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-test/vim-test'
+Plug 'https://github.com/github/copilot.vim'
 call plug#end()
 
 " Get a good value for $PATH.
