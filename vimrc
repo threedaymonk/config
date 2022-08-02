@@ -63,9 +63,13 @@ set directory=~/.cache/vim/
 let mapleader = ","
 let maplocalleader = ","
 
+" ,c runs makeprg
 nmap <leader>c :w<CR>:make %<CR><CR>:copen<CR>
 
-" Use ^J/^K to move between tabs
+" Use Esc to exit terminal-mode
+tnoremap <Esc> <C-\><C-n>
+
+" Use Ctrl-J/K to move between tabs
 :nmap <C-J> :tabprevious<cr>
 :nmap <C-K> :tabnext<cr>
 :map  <C-J> :tabprevious<cr>
@@ -73,12 +77,26 @@ nmap <leader>c :w<CR>:make %<CR><CR>:copen<CR>
 :imap <C-J> <ESC>:tabprevious<cr>i
 :imap <C-K> <ESC>:tabnext<cr>i
 
-" Use ^X to close a tab
+" Use Ctrl-X to close a tab
 :map <C-X> :bd<CR>
 
-" Use ^N for :cnext
+" Use Ctrl-N for :cnext
 :nmap <C-N> :cnext<CR>
 :map  <C-N> :cnext<CR>
+
+" Use Alt-H/J/K/L to move between windows
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 
 " --- CTRLP ---
 
