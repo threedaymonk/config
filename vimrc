@@ -120,6 +120,13 @@ let g:test#neovim#start_normal = 1
 nmap <silent> <leader>T :TestNearest<CR>
 nmap <silent> <leader>t :TestFile<CR>
 
+" --- COPILOT ---
+
+let g:copilot_filetypes = {
+  \ 'text': v:false,
+  \ 'markdown': v:false,
+  \ }
+
 " --- FILETYPE-SPECIFIC CONFIGURATION ---
 
 autocmd BufNewFile,BufReadPost *_spec.rb setl filetype=rspec syntax=ruby
