@@ -110,7 +110,7 @@ let g:ctrlp_user_command = {
 
 " --- FUGITIVE ---
 
-command! -nargs=+ GG tabnew | silent Ggrep! <args> | copen
+command! -nargs=+ -complete=file GG silent Ggrep! <args> | copen
 
 " --- VIM-TEST ---
 
