@@ -164,3 +164,29 @@ autocmd FileType sh
 autocmd FileType go
   \ setl noet | setl ts=4 | setl sw=4 |
   \ autocmd BufWritePre <buffer> Fmt
+
+" --- SESSION ---
+
+" Save the current session iff there's an existing session file, i.e. I have to
+" type :mks! at least once to indicate that I care about this project.
+function! SaveSession()
+  if filereadable(getcwd() . "/Session.vim")
+    execute 'mksession! ' . getcwd() . '/Session.vim'
+  endif
+endfunction
+
+function! RestoreSession()
+  if filereadable(getcwd() . '/Session.vim')
+    execute 'source ' . getcwd() . '/Session.vim'
+    if bufexists(1)
+      for l in range(1, bufnr('$'))
+        if bufwinnr(l) == -1
+          exec 'sbuffer ' . l
+        endif
+      endfor
+    endif
+  endif
+endfunction
+
+autocmd VimLeave * call SaveSession()
+autocmd VimEnter * nested call RestoreSession()
