@@ -23,6 +23,7 @@ Plug 'vim-test/vim-test'
 Plug 'github/copilot.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'threedaymonk/aerial.nvim'
 call plug#end()
 
 " --- COMMON CONFIGURATION ---
@@ -168,6 +169,15 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+LUA
+
+" --- AERIAL ---
+
+lua <<LUA
+require('aerial').setup({
+  default_direction = "prefer_left",
+  width = 0.25,
+})
 LUA
 
 " --- FILETYPE-SPECIFIC CONFIGURATION ---
