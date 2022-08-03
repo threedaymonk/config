@@ -22,7 +22,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'vim-test/vim-test'
 Plug 'https://github.com/github/copilot.vim'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'preservim/nerdtree'
 call plug#end()
 
 " --- COMMON CONFIGURATION ---
@@ -102,6 +101,15 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+
+" -- NETRW BROWSER ---
+
+" Invoke with :Vex
+let g:netrw_liststyle = 3 " tree-style listing
+let g:netrw_browse_split = 4 " open files in previous window to right
+let g:netrw_winsize = 25 " limit to 25% width
+let g:netrw_banner = 0 " no banner
+let g:netrw_list_hide = &wildignore " hide files matching wildignore
 
 " --- CTRLP ---
 
