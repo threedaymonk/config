@@ -197,16 +197,16 @@ autocmd FileType css,scss,clojure,scheme setl isk+=-
 
 " Ruby
 autocmd FileType ruby
-  \ set makeprg=ruby\ -cw|
+  \ setl makeprg=ruby\ -cw|
   \ setl isk+=\?,!
 
 " Javascript
 autocmd FileType javascript
-  \ set makeprg=jshint
+  \ setl makeprg=jshint
 
 " Shell scripts
 autocmd FileType sh
-  \ set makeprg=shellcheck
+  \ setl makeprg=shellcheck
 
 " Go
 autocmd FileType go
