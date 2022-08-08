@@ -224,7 +224,7 @@ function! SaveSession()
 endfunction
 
 function! RestoreSession()
-  if filereadable(getcwd() . '/Session.vim')
+  if filereadable(getcwd() . '/Session.vim') && bufname() !~ '\.git/'
     execute 'source ' . getcwd() . '/Session.vim'
     if bufexists(1)
       for l in range(1, bufnr('$'))
