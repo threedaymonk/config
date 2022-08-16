@@ -59,15 +59,15 @@ set undodir=~/.cache/vim/
 set backupdir=~/.cache/vim/
 set directory=~/.cache/vim/
 
-" X11 copy/paste integration
-map <leader>pc :w !xclip -i -selection clipboard<CR>
-nmap <leader>pv :r!xclip -o -selection clipboard<CR>
-
 " --- KEYBOARD ---
 
 " Use , instead of \ as the user modifier. Easier to reach.
 let mapleader = ","
 let maplocalleader = ","
+
+" X11 copy/paste integration
+map <leader>pc :w !xclip -selection clipboard -i<CR><CR>
+nmap <leader>pv :r!xclip -selection clipboard -o<CR>
 
 " ,c runs makeprg
 nmap <leader>c :w<CR>:make %<CR><CR>:copen<CR>
