@@ -141,6 +141,7 @@ let g:copilot_filetypes = {
   \ 'text': v:false,
   \ 'markdown': v:false,
   \ }
+let g:copilot_node_command = "~/.asdf/installs/nodejs/16.15.0/bin/node"
 
 " --- TREESITTER ---
 
