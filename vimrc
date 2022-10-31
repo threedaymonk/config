@@ -23,7 +23,7 @@ Plug 'vim-test/vim-test'
 Plug 'github/copilot.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'stevearc/aerial.nvim'
+Plug 'stevearc/aerial.nvim', {'branch': 'nvim-0.5'}
 call plug#end()
 
 " --- COMMON CONFIGURATION ---
