@@ -134,15 +134,6 @@ PS2="%F{$prompt_fg}%K{$prompt_bg}${PS2}%f%k"
 PS3="%F{$prompt_fg}%K{$prompt_bg}${PS3}%f%k"
 PS4="%F{$prompt_fg}%K{$prompt_bg}${PS4}%f%k"
 
-# Use pry for 'irb' if present
-irb() {
-  if bin-exists pry; then
-    pry "$@"
-  else
-    $(/usr/bin/which irb) "$@"
-  fi
-}
-
 bindkey "[Z" reverse-menu-complete
 bindkey "[B" history-beginning-search-forward
 bindkey "[A" history-beginning-search-backward
