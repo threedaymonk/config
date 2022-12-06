@@ -54,6 +54,9 @@ set incsearch " Show first match when typing a search
 autocmd VimEnter * set vb t_vb= " No more bell!
 set statusline=%<%f\ %h%m%r\ %y\ %{FugitiveStatusline()}%=\ %-14.(%l/%L\ %c%V\ U+%04B%)\ %P
 
+" Don't make the entire file unreadable when there's a syntax error
+hi Error NONE
+
 " Don't clutter working directory
 set undodir=~/.cache/vim/
 set backupdir=~/.cache/vim/
