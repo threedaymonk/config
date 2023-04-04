@@ -266,3 +266,9 @@ endfunction
 
 autocmd VimLeave * call SaveSession()
 autocmd VimEnter * nested call RestoreSession()
+
+" --- LOCAL CONFIG
+
+if filereadable($HOME."/.vimrc.local") && (expand($HOME) != getcwd())
+  source ~/.vimrc.local
+endif
