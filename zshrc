@@ -13,6 +13,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+# Show time taken for slow commands (over 30s)
+REPORTTIME=30
+
 bin-exists() {
   /usr/bin/which $1 >/dev/null
 }
