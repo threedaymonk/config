@@ -60,6 +60,7 @@ hi Error NONE
 set undodir=~/.cache/vim/
 set backupdir=~/.cache/vim/
 set directory=~/.cache/vim/
+let g:gutentags_cache_dir = $HOME .'/.cache/guten_tags'
 
 " --- KEYBOARD ---
 
