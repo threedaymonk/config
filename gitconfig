@@ -2,7 +2,7 @@
   st = status -sb
   ci = commit
   co = checkout
-  br = branch
+  br = branch --sort=-committerdate
   diffc = diff --cached
   dc = diff --cached
   ch = cherry-pick
