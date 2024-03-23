@@ -144,13 +144,6 @@ bindkey "OZ" reverse-menu-complete
 bindkey "OB" history-beginning-search-forward
 bindkey "OA" history-beginning-search-backward
 
-if [ $DISPLAY ] && bin-exists gnome-keyring-daemon; then
-  unset GNOME_KEYRING_CONTROL
-  eval $(gnome-keyring-daemon --components=pkcs11,secret,ssh,gpg \
-           --daemonize --start | \
-           sed 's/^/export /')
-fi
-
 alias csi="rlwrap csi"
 
 if [ -f ~/.asdf/asdf.sh ]; then
