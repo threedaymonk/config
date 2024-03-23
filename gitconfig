@@ -25,6 +25,7 @@
   status = auto
 [core]
   excludesfile = ~/.gitignore
+  pager = diffr | less
 [push]
   default = current
 [diff]
@@ -34,12 +35,8 @@
   autosetupmerge = true
 [rebase]
   autoSquash = true
-[pager]
-  log = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
-  show = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
-  diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 [interactive]
-  diffFilter = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight
+  diffFilter = diffr
 [url "git@github.com:"]
   pushInsteadOf = "https://github.com/"
 [init]
