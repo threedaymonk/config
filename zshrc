@@ -40,7 +40,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Various defaults
-export EDITOR='vim'
+export EDITOR='nvim'
 export PAGER='less'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 if [ $VSCODE_GIT_IPC_HANDLE ]; then
@@ -58,7 +58,7 @@ else
   alias ls='ls -G'
 fi
 alias ll='ls -lah'
-alias vim='vim -p'
+alias v='nvim -p'
 alias xless='nohup xless >/dev/null 2>&1 &'
 alias private='unset HISTFILE'
 alias g=git
