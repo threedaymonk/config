@@ -25,21 +25,26 @@
   status = auto
 [core]
   excludesfile = ~/.gitignore
-  pager = diffr | less
+  pager = delta
 [push]
   default = current
 [diff]
   algorithm = patience
   compactionHeuristic = true
+  colorMoved = default
 [branch]
   autosetupmerge = true
 [rebase]
   autoSquash = true
 [interactive]
-  diffFilter = diffr
+  diffFilter = delta --color-only
 [url "git@github.com:"]
   pushInsteadOf = "https://github.com/"
 [init]
   defaultBranch = main
 [include]
   path = ~/.gitconfig.local
+[delta]
+  navigate = true
+[merge]
+  conflictstyle = diff3
