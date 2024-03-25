@@ -20,7 +20,6 @@ Plug 'kburdett/vim-nuuid'
 Plug 'tidalcycles/vim-tidal'
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-test/vim-test'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'stevearc/aerial.nvim'
 call plug#end()
