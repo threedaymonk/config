@@ -1,5 +1,4 @@
 autoload -Uz colors; colors
-autoload -Uz compinit; compinit
 
 # Don't exit if I type ^D
 setopt ignoreeof
@@ -59,7 +58,6 @@ else
 fi
 alias ll='ls -lah'
 alias v='nvim -p'
-alias xless='nohup xless >/dev/null 2>&1 &'
 alias private='unset HISTFILE'
 alias g=git
 
@@ -73,28 +71,6 @@ stty -ixon
 # Default prompt colours
 prompt_fg=black
 prompt_bg=green
-
-# Add or move directory to the front of PATH
-prepend_path() {
-  local to_add=$1
-  export PATH=$to_add$( echo ":$PATH:" | sed 's!:$to_add:!:!' | sed 's!:$!!' )
-}
-
-# Heroku toolbelt
-prepend_path "/usr/local/heroku/bin"
-
-# I always want my ~/bin directory
-prepend_path ~/bin
-
-# Haskell
-prepend_path ~/.cabal/bin
-
-# Mono
-prepend_path "/opt/mono/bin"
-
-# Go
-export GOPATH=~/.go
-prepend_path $GOPATH/bin
 
 # Show stuff in prompt
 precmd() {
@@ -144,23 +120,26 @@ bindkey "OZ" reverse-menu-complete
 bindkey "OB" history-beginning-search-forward
 bindkey "OA" history-beginning-search-backward
 
-alias csi="rlwrap csi"
+export GOPATH=~/.go
 
 if [ -f ~/.asdf/asdf.sh ]; then
   source ~/.asdf/asdf.sh
   # append completions to fpath
   fpath=(${ASDF_DIR}/completions $fpath)
   # initialise completions with ZSH's compinit
-  autoload -Uz compinit && compinit
 fi
 
-prepend_path "$HOME/.local/bin"
-
-# Avoid typing bundle exec (in conjunction with binstubs)
-# Bundle directory needs to be first for e.g. rake to work reliably
-prepend_path "./.bundle/bin"
-
-# Machine-specific settings
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+
+autoload -Uz compinit && compinit
+
+typeset -U path
+path=(
+  ./.bundle/bin
+  ~/bin
+  ~/.local/bin
+  $GOPATH/bin
+  $path
+)
